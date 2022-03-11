@@ -7,6 +7,7 @@ import SuspenseWithChunkError from './components/SuspenseWithChunkError'
 import PageLoader from './components/Loader/PageLoader'
 import history from './routerHistory'
 import Swap from './views/Swap'
+import BuyNode from './views/BuyNode'
 
 const Home = lazy(() => import('./views/Home'))
 
@@ -23,6 +24,7 @@ const App: React.FC = () => {
               <Home />
             </Route>
             <Route exact strict path="/swap" component={Swap} />
+            <Route exact strict path="/buy" component={BuyNode} />
             <Route>
               <Redirect to="/" />
             </Route>
