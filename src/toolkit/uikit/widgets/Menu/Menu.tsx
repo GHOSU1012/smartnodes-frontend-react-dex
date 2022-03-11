@@ -129,7 +129,7 @@ const Menu: React.FC<NavProps> = ({
         <Logo
           isPushed={isPushed}
           togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
-          isDark={isDark}
+          // isDark={isDark}
           href={homeLink?.href ?? '/'}
         />
         {!!login && !!logout && (

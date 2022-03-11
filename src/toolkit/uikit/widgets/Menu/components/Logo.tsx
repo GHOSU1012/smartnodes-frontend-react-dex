@@ -85,4 +85,4 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush,  href }) => {
   )
 }
 
-export default React.memo(Logo, (prev, next) => prev.isPushed === next.isPushed && prev.isDark === next.isDark)
+export default React.memo(Logo, (prev, next) => prev.isPushed === next.isPushed)

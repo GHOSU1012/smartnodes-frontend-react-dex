@@ -65,22 +65,22 @@ const MobileOnlyOverlay = styled(Overlay)`
   }
 `
 
-const StyledHeading = styled(Heading)`
-  @media (max-width: 768px) {
-    display: none;
-  }
-`
+// const StyledHeading = styled(Heading)`
+//   @media (max-width: 768px) {
+//     display: none;
+//   }
+// `
 
-const StyledMenuButton = styled(MenuButton)`
-  color: #f7941d;
-  background-color: #000000;
-  height: 32px;
-`
-const ActiveStyledMenuButton = styled(MenuButton)`
-  color: #ffffff;
-  background-color: #000000;
-  height: 32px;
-`
+// const StyledMenuButton = styled(MenuButton)`
+//   color: #f7941d;
+//   background-color: #000000;
+//   height: 32px;
+// `
+// const ActiveStyledMenuButton = styled(MenuButton)`
+//   color: #ffffff;
+//   background-color: #000000;
+//   height: 32px;
+// `
 const StyledLogo = styled(Logo)`
   @media (max-width: 425px) {
     display: none;
@@ -111,7 +111,7 @@ const Menu: React.FC<NavProps> = ({
   const refPrevOffset = useRef(window.pageYOffset)
   // const [currentId, setCurrentId] = useState(1)
 
-  const changeNetwork = (chainid: string) => {
+  // const changeNetwork = (chainid: string) => {
     // if (window.ethereum) {
     //   await window.ethereum.request({
     //     method: 'wallet_switchEthereumChain',
@@ -126,7 +126,7 @@ const Menu: React.FC<NavProps> = ({
     //   setCurrentId(56)
     // }
     // console.info(currentId)
-  }
+  // }
 
   useEffect(() => {
     const handleScroll = () => {

@@ -139,7 +139,7 @@ export function useSwapCallback(
                   })
                   .catch((callError) => {
                     console.error('Call threw error', call, callError)
-                    const reason: string = callError.reason || callError.data?.message || callError.message
+                    const reason: string = callError.reason || callError.data?.message
                     const errorMessage = `The transaction cannot succeed due to error: ${
                       reason ?? 'Unknown error, check the logs'
                     }.`
@@ -203,7 +203,7 @@ export function useSwapCallback(
             } else {
               // otherwise, the error was unexpected and we need to convey that
               console.error(`Swap failed`, error, methodName, args, value)
-              throw new Error(`Swap failed: ${error.message}`)
+              throw new Error(`Swap failed: `)
             }
           })
       },

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { useSelector } from 'react-redux'
-import axios from 'axios'
-import { Duration, format, fromUnixTime } from 'date-fns'
-import { UnsupportedChainIdError, useWeb3React, Web3ReactProvider } from '@web3-react/core'
+// import { useSelector } from 'react-redux'
+// import axios from 'axios'
+// import { Duration, format, fromUnixTime } from 'date-fns'
+// import { UnsupportedChainIdError, useWeb3React, Web3ReactProvider } from '@web3-react/core'
 // import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { Card, CardBody, Text, Heading } from 'uikit'
 // import ConnectWalletButton from 'components/ConnectWalletButton'
@@ -19,10 +19,10 @@ const StyledCard = styled(Card)`
   height: 200px;
 `
 
-const RowBlock = styled.div`
-  display: flex;
-  flex-direction: row;
-`
+// const RowBlock = styled.div`
+//   display: flex;
+//   flex-direction: row;
+// `
 
 const RowBlockBetween = styled.div`
   height: 100%;

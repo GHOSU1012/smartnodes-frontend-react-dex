@@ -18,8 +18,8 @@ import TransactionSettings from './TransactionSettings'
 const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
   const [showConfirmExpertModal, setShowConfirmExpertModal] = useState(false)
   const [userSlippageTolerance, setUserslippageTolerance] = useUserSlippageTolerance()
-  const [ttl, setTtl] = useUserTransactionTTL()
-  const [expertMode, toggleExpertMode] = useExpertModeManager()
+  // const [ttl, setTtl] = useUserTransactionTTL()
+  // const [expertMode, toggleExpertMode] = useExpertModeManager()
   // const [singleHopOnly, setSingleHopOnly] = useUserSingleHopOnly()
   // const [audioPlay, toggleSetAudioMode] = useAudioModeManager()
   // const { onChangeRecipient } = useSwapActionHandlers()
@@ -49,7 +49,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
             onClick={() => {
               // eslint-disable-next-line no-alert
               if (window.prompt(`Please type the word "confirm" to enable expert mode.`) === 'confirm') {
-                toggleExpertMode()
+                // toggleExpertMode()
                 setShowConfirmExpertModal(false)
               }
             }}
@@ -71,8 +71,8 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
           <TransactionSettings
             rawSlippage={userSlippageTolerance}
             setRawSlippage={setUserslippageTolerance}
-            deadline={ttl}
-            setDeadline={setTtl}
+            // deadline={ttl}
+            // setDeadline={setTtl}
           />
           {/* <Text bold fontSize="20px" mt="32px">
             {t('Interface Settings')}

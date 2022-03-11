@@ -94,7 +94,7 @@ const UserName: React.FC = () => {
       } else {
         const data = await res.json()
         setIsValid(false)
-        setMessage(data?.error?.message)
+        setMessage('data?.error?.message')
       }
     } finally {
       setIsLoading(false)
@@ -128,14 +128,16 @@ const UserName: React.FC = () => {
         setExistingUserState(ExistingUserState.CREATED)
       } else {
         const data = await response.json()
-        toastError(t('Error'), data?.error?.message)
+        toastError(t('Error'), 'data?.error?.message')
       }
     } catch (error) {
-      toastError(error?.message ? error.message : JSON.stringify(error))
+      toastError('error')
+
     } finally {
       setIsLoading(false)
     }
   }
+
 
   const handleAcknowledge = () => setIsAcknowledged(!isAcknowledged)
 

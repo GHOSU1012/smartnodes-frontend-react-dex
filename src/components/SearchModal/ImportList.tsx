@@ -57,7 +57,7 @@ function ImportList({ listURL, list, onImport }: ImportProps) {
         onImport()
       })
       .catch((error) => {
-        setAddError(error.message)
+        setAddError('error.message')
         dispatch(removeList(listURL))
       })
   }, [adding, dispatch, fetchList, listURL, onImport])

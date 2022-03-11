@@ -4,7 +4,7 @@ import axios from 'axios'
 import { Card, CardBody, Heading } from 'uikit'
 import { ethers } from 'ethers';
 
-import Web3 from 'web3';
+// import Web3 from 'web3';
 
 
 import tempABI from '../../../contracts/smartnodes.json';

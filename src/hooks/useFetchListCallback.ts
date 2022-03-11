@@ -42,7 +42,7 @@ function useFetchListCallback(): (listUrl: string, sendDispatch?: boolean) => Pr
         .catch((error) => {
           console.error(`Failed to get list at url ${listUrl}`, error)
           if (sendDispatch) {
-            dispatch(fetchTokenList.rejected({ url: listUrl, requestId, errorMessage: error.message }))
+            dispatch(fetchTokenList.rejected({ url: listUrl, requestId, errorMessage: 'error.message' }))
           }
           throw error
         })

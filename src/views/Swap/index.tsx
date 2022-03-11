@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { CurrencyAmount, JSBI, Token, Trade } from 'toolkit/sdk'
-import { Button, Text, ArrowDownIcon, Box, useModal } from 'toolkit/uikit'
+import { Button, Text, ArrowDownIcon,  useModal } from 'toolkit/uikit'
 import { useIsTransactionUnsupported } from 'hooks/Trades'
 import UnsupportedCurrencyFooter from 'components/UnsupportedCurrencyFooter'
 import { RouteComponentProps } from 'react-router-dom'
@@ -9,19 +9,19 @@ import { useTranslation } from 'contexts/Localization'
 import SwapWarningTokens from 'config/constants/swapWarningTokens'
 import { getAddress } from 'utils/addressHelpers'
 import AddressInputPanel from './components/AddressInputPanel'
-import { GreyCard } from '../../components/Card'
-import Column, { AutoColumn } from '../../components/Layout/Column'
+// import { GreyCard } from '../../components/Card'
+import  { AutoColumn } from '../../components/Layout/Column'
 import ConfirmSwapModal from './components/ConfirmSwapModal'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import { AutoRow, RowBetween } from '../../components/Layout/Row'
 import AdvancedSwapDetailsDropdown from './components/AdvancedSwapDetailsDropdown'
 import confirmPriceImpactWithoutFee from './components/confirmPriceImpactWithoutFee'
-import { ArrowWrapper, SwapCallbackError, Wrapper } from './components/styleds'
+import { ArrowWrapper,  Wrapper } from './components/styleds'
 import TradePrice from './components/TradePrice'
 import ImportTokenWarningModal from './components/ImportTokenWarningModal'
-import ProgressSteps from './components/ProgressSteps'
+// import ProgressSteps from './components/ProgressSteps'
 import { AppHeader, AppBody } from '../../components/App'
-import ConnectWalletButton from '../../components/ConnectWalletButton'
+// import ConnectWalletButton from '../../components/ConnectWalletButton'
 
 import { INITIAL_ALLOWED_SLIPPAGE } from '../../config/constants'
 import useActiveWeb3React from '../../hooks/useActiveWeb3React'
@@ -38,8 +38,8 @@ import {
 } from '../../state/swap/hooks'
 import { useExpertModeManager, useUserSlippageTolerance, useUserSingleHopOnly } from '../../state/user/hooks'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
-import { computeTradePriceBreakdown, warningSeverity } from '../../utils/prices'
-import CircleLoader from '../../components/Loader/CircleLoader'
+import { computeTradePriceBreakdown } from '../../utils/prices'
+// import CircleLoader from '../../components/Loader/CircleLoader'
 import Page from '../Page'
 import SwapWarningModal from './components/SwapWarningModal'
 
@@ -73,7 +73,7 @@ export default function Swap({ history }: RouteComponentProps) {
       return !(token.address in defaultTokens)
     })
 
-  const { account } = useActiveWeb3React()
+  // const { account } = useActiveWeb3React()
 
   // for expert mode
   const [isExpertMode] = useExpertModeManager()
@@ -89,8 +89,8 @@ export default function Swap({ history }: RouteComponentProps) {
 
   const {
     wrapType,
-    execute: onWrap,
-    inputError: wrapInputError,
+    // execute: onWrap,
+    // inputError: wrapInputError,
   } = useWrapCallback(currencies[Field.INPUT], currencies[Field.OUTPUT], typedValue)
   const showWrap: boolean = wrapType !== WrapType.NOT_APPLICABLE
   const trade = showWrap ? undefined : v2Trade
@@ -106,7 +106,7 @@ export default function Swap({ history }: RouteComponentProps) {
       }
 
   const { onSwitchTokens, onCurrencySelection, onUserInput, onChangeRecipient } = useSwapActionHandlers()
-  const isValid = !swapInputError
+  // const isValid = !swapInputError
   const dependentField: Field = independentField === Field.INPUT ? Field.OUTPUT : Field.INPUT
 
   const handleTypeInput = useCallback(
@@ -143,10 +143,10 @@ export default function Swap({ history }: RouteComponentProps) {
   }
 
   const route = trade?.route
-  const userHasSpecifiedInputOutput = Boolean(
-    currencies[Field.INPUT] && currencies[Field.OUTPUT] && parsedAmounts[independentField]?.greaterThan(JSBI.BigInt(0)),
-  )
-  const noRoute = !route
+  // const userHasSpecifiedInputOutput = Boolean(
+  //   currencies[Field.INPUT] && currencies[Field.OUTPUT] && parsedAmounts[independentField]?.greaterThan(JSBI.BigInt(0)),
+  // )
+  // const noRoute = !route
 
   // check whether the user has approved the router on the input token
   const [approval, approveCallback] = useApproveCallbackFromTrade(trade, allowedSlippage)
@@ -169,7 +169,7 @@ export default function Swap({ history }: RouteComponentProps) {
 
   const { priceImpactWithoutFee } = computeTradePriceBreakdown(trade)
 
-  const [singleHopOnly] = useUserSingleHopOnly()
+  // const [singleHopOnly] = useUserSingleHopOnly()
 
   const handleSwap = useCallback(() => {
     if (priceImpactWithoutFee && !confirmPriceImpactWithoutFee(priceImpactWithoutFee)) {
@@ -183,11 +183,11 @@ export default function Swap({ history }: RouteComponentProps) {
       .then((hash) => {
         setSwapState({ attemptingTxn: false, tradeToConfirm, swapErrorMessage: undefined, txHash: hash })
       })
-      .catch((error) => {
+      .catch(() => {
         setSwapState({
           attemptingTxn: false,
           tradeToConfirm,
-          swapErrorMessage: error.message,
+          swapErrorMessage: 'error.message',
           txHash: undefined,
         })
       })
@@ -203,12 +203,12 @@ export default function Swap({ history }: RouteComponentProps) {
 
   // show approve flow when: no error on inputs, not approved or pending, or approved in current session
   // never show if price impact is above threshold in non expert mode
-  const showApproveFlow =
-    !swapInputError &&
-    (approval === ApprovalState.NOT_APPROVED ||
-      approval === ApprovalState.PENDING ||
-      (approvalSubmitted && approval === ApprovalState.APPROVED)) &&
-    !(priceImpactSeverity > 3 && !isExpertMode)
+  // const showApproveFlow =
+  //   !swapInputError &&
+  //   (approval === ApprovalState.NOT_APPROVED ||
+  //     approval === ApprovalState.PENDING ||
+  //     (approvalSubmitted && approval === ApprovalState.APPROVED)) &&
+  //   !(priceImpactSeverity > 3 && !isExpertMode)
 
   const handleConfirmDismiss = useCallback(() => {
     setSwapState({ tradeToConfirm, attemptingTxn, swapErrorMessage, txHash })

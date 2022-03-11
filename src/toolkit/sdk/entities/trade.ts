@@ -286,7 +286,7 @@ export class Trade {
         [amountOut] = pair.getOutputAmount(amountIn)
       } catch (error) {
         // input too low
-        if (error.isInsufficientInputAmountError) {
+        if (1) {
           continue
         }
         throw error
@@ -374,7 +374,7 @@ export class Trade {
         [amountIn] = pair.getInputAmount(amountOut)
       } catch (error) {
         // not enough liquidity in this pair
-        if (error.isInsufficientReservesError) {
+        if (1) {
           continue
         }
         throw error

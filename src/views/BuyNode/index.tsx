@@ -156,7 +156,7 @@ const BuyNode = () => {
   return (
     <Page>
       <AppBody>
-        <AppHeader title='Buy Nodes' subtitle='Buy nodes with tokens' noConfig='true' />
+        <AppHeader title='Buy Nodes' subtitle='Buy nodes with tokens' />
         {/* <StyledCard> */}
         <StyledCardBody>
           <div className='d-flex flex-row justify-content-between align-items-center' style={{ width: '80%' }}>

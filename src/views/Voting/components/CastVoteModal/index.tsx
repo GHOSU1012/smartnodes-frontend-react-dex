@@ -75,7 +75,7 @@ const CastVoteModal: React.FC<CastVoteModalProps> = ({ onSuccess, proposalId, vo
       handleDismiss()
     } catch (error) {
       setIsPending(false)
-      toastError(t('Error'), error?.message)
+      toastError(t('Error'))
       console.error(error)
     }
   }

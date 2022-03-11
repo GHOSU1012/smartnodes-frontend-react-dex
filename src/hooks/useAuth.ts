@@ -48,7 +48,7 @@ const useAuth = () => {
               }
               console.log('Authorization Error', 'Please authorize to access your account')
             } else {
-              console.log(error.name, error.message)
+              console.log(error.name, 'error.message')
             }
           }
         })
