@@ -50,11 +50,11 @@ const CakePrice: React.FC<Props> = ({ cakePriceUsd }) => {
           href={href}
           target="_blank"
         >
-          <img src='' alt="" width="32px" />
+          <img src='images/discord.png' alt="" width="32px" />
           <Text color="text" bold ml="10px">Community</Text>
         </PriceLink>
       </Wrapper>
-      <img src='' alt="balance dots" style={{ marginTop: "5px" }} />
+      <img src='images/dots.png' alt="balance dots" style={{ marginTop: "5px" }} />
     </PriceWrapper>
   )
 }
