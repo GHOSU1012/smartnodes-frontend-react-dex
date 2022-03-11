@@ -19,10 +19,11 @@ const PurpleSwitch = withStyles({
 
 export default function ToggleButtonAC(props) {
   const [isChecked, setCheck] = React.useState(false);
+  const { onClick } = props;
 
   const handleChange = () => {
     setCheck(!isChecked);
-    props.onClick();
+    onClick();
   };
 
   return (

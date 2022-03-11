@@ -18,8 +18,5 @@ const Link: React.FC<any> = ({ external, ...props }) => {
   return <StyledLink as="a" bold {...internalProps} {...props} />;
 };
 
-Link.defaultProps = {
-  color: "primary",
-};
 
 export default Link;

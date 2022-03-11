@@ -8,7 +8,7 @@ import MenuButton from './MenuButton'
 
 interface Props {
   isPushed: boolean
-  isDark: boolean
+  // isDark: boolean
   togglePush: () => void
   href: string
 }

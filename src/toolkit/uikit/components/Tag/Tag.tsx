@@ -16,10 +16,5 @@ const Tag: React.FC<TagProps> = ({ startIcon, endIcon, children, ...props }) => 
   </StyledTag>
 );
 
-Tag.defaultProps = {
-  variant: "primary",
-  scale: scales.MD,
-  outline: false,
-};
 
 export default Tag;

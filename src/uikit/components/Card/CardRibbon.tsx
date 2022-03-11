@@ -60,8 +60,4 @@ const CardRibbon: React.FC<CardRibbonProps> = ({ variantColor, text, ribbonPosit
   );
 };
 
-CardRibbon.defaultProps = {
-  ribbonPosition: "right",
-};
-
 export default CardRibbon;

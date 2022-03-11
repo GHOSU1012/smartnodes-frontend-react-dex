@@ -13,8 +13,5 @@ const Toggle: React.FC<ToggleProps> = ({ checked, scale = scales.MD, ...props })
   );
 };
 
-Toggle.defaultProps = {
-  scale: scales.MD,
-};
 
 export default Toggle;

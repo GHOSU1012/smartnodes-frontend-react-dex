@@ -16,8 +16,4 @@ const PancakeToggle: React.FC<PancakeToggleProps> = ({ checked, scale = scales.M
   </PancakeStack>
 );
 
-PancakeToggle.defaultProps = {
-  scale: scales.MD,
-};
-
 export default PancakeToggle;

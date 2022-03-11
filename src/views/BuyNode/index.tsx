@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
-import Page from '../Page'
-import { AppHeader, AppBody } from '../../components/App'
-
 import { Card, CardBody, Heading } from 'uikit'
 import { ethers } from 'ethers';
+import { AppHeader, AppBody } from '../../components/App'
+import Page from '../Page'
+
 
 // import Web3 from 'web3';s
 
@@ -118,7 +118,7 @@ const StyledButton2 = styled.button`
 `;
 
 
-const BuyNode = (myAccount) => {
+const BuyNode = () => {
   const [nodeName, setNodeName] = useState('');
   const buyNode = async () => {
     try {
@@ -129,8 +129,8 @@ const BuyNode = (myAccount) => {
         const signer = provider.getSigner();
         const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
-        console.log(myAccount.myAccount, nodeName);
-        const newNode = await contract.createNode(myAccount.myAccount, nodeName, 1, true);
+        // console.log(myAccount.myAccount, nodeName);
+        // const newNode = await contract.createNode(myAccount.myAccount, nodeName, 1, true);
 
         // await contract.on("NodeCreated", (amount, account, blockTime) => {
         //   console.log("Node Successfully created", amount, account, blockTime);
@@ -156,7 +156,7 @@ const BuyNode = (myAccount) => {
   return (
     <Page>
       <AppBody>
-        <AppHeader title='Buy Nodes' subtitle='Buy nodes with tokens' noConfig={true} />
+        <AppHeader title='Buy Nodes' subtitle='Buy nodes with tokens' noConfig='true' />
         {/* <StyledCard> */}
         <StyledCardBody>
           <div className='d-flex flex-row justify-content-between align-items-center' style={{ width: '80%' }}>

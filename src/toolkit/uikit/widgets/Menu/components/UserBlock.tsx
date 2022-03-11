@@ -9,7 +9,7 @@ interface Props {
   account?: string
   login: Login
   logout: () => void
-  custom?: boolean
+  // custom?: boolean
   bottomBlock? : boolean
 }
 
