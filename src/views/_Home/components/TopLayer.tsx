@@ -1,6 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { rightImg, HomeArtist, HomeTopDots, HomeTopVertical, CommonBtn } from '../../../components/Image'
+
+import rightImg from 'images/status1.png'
+import HomeArtist from 'images/status1.png'
+import HomeTopDots from 'images/status1.png'
+import HomeTopVertical from 'images/status1.png'
+import CommonBtn from 'images/status1.png'
 
 const useStyles = makeStyles((theme) => ({
   container: {

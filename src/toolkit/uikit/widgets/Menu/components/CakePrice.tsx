@@ -4,10 +4,6 @@ import { PancakeRoundIcon } from '../../../components/Svg'
 import Text from '../../../components/Text/Text'
 import Skeleton from '../../../components/Skeleton/Skeleton'
 
-import {
-  defaultLogo,
-  sidebarDots,
-} from '../../../../../components/Image'
 
 interface Props {
   cakePriceUsd?: number
@@ -54,11 +50,11 @@ const CakePrice: React.FC<Props> = ({ cakePriceUsd }) => {
           href={href}
           target="_blank"
         >
-          <img src={defaultLogo} alt="" width="32px" />
+          <img src='' alt="" width="32px" />
           <Text color="text" bold ml="10px">Community</Text>
         </PriceLink>
       </Wrapper>
-      <img src={sidebarDots} alt="balance dots" style={{ marginTop: "5px" }} />
+      <img src='' alt="balance dots" style={{ marginTop: "5px" }} />
     </PriceWrapper>
   )
 }

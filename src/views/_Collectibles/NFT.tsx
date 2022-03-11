@@ -7,7 +7,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
-import { HomeBottomDots, nftSoldier, HomeArtist, nftBtnSideIcon } from '../../components/Image';
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
@@ -196,7 +195,7 @@ const CustomComponent = ({ data, title }: AppProps) => {
             onClick={() => activeComponent(i)}
           >
             <div className={`${classes.cate} ${active}`} key={d.id}>{d.name}</div>
-            <img className={`${classes.btn} ${active}`} src={nftBtnSideIcon} alt="" />
+            <img className={`${classes.btn} ${active}`} src='' alt="" />
           </div>
         )
       })}
@@ -249,7 +248,7 @@ const NFT = () => {
                 role="button" aria-hidden="true"
                 onClick={() => console.log('Artist ', data)}
               >
-                <img className={classes.artistAvatar} src={nftSoldier} alt="" />
+                <img className={classes.artistAvatar} src='' alt="" />
                 <span>Artist {data}</span>
               </div>
             ))}
@@ -257,7 +256,7 @@ const NFT = () => {
         </div>
       </div>
       <div className={classes.body}>
-        <img className={classes.upperLeftImg} src={HomeBottomDots} alt="" />
+        <img className={classes.upperLeftImg} src='' alt="" />
         <div className={classes.box}>
           <div className="container">
             <div className="row">
@@ -278,7 +277,7 @@ const NFT = () => {
               </div>
               {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((data) => (
                 <div className={`col-sm-6 col-lg-4 col-xl-3 ${classes.bigScreen} mb-4`} key={data}>
-                  <img src={HomeArtist} alt="" />
+                  <img src='' alt="" />
                 </div>
               ))}
             </div>

@@ -1,15 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
 import { makeStyles } from '@material-ui/core/styles';
 
 import { Theme } from '@material-ui/core';
 
-import {
-  HomeIcon, ConnectIcon, FarmIcon, NFTIcon, SwapIcon,
-  SidebarConnect, SidebarConnectBtn, SidebarMoon, 
-  Logo, Avatar, LangEN, defaultLogo,
-  sidebarBalanceLeft, sidebarDots, bottomLeftIcon, sidebarEllipse,
-} from '../../../../../components/Image'
+import SidebarConnectBtn from 'images/status1.png'
+import defaultLogo from 'images/status1.png'
+import sidebarBalanceLeft from 'images/status1.png'
+import sidebarDots from 'images/status1.png'
+import bottomLeftIcon from 'images/status1.png'
+import sidebarEllipse from 'images/status1.png'
 
 
 const useStyles = makeStyles<Theme>((theme) => ({

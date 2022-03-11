@@ -1,6 +1,8 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { LeftLink, BottomRightCorner, Links } from '../../../components/Image'
+import LeftLink from 'images/status1.png'
+import BottomRightCorner from 'images/status1.png'
+import Links from 'images/status1.png'
 
 const useStyles = makeStyles((theme) => ({
   termsAndService: {

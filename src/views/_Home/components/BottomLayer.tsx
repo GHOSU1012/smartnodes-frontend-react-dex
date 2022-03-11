@@ -7,11 +7,8 @@ import { useWalletModal, Text } from 'toolkit/uikit'
 import useAuth from 'hooks/useAuth'
 import { makeStyles } from '@material-ui/core/styles';
 import Footer from './Footer'
-import {
-  connect, swap, trade, generate, HomeBottomDots,
-  Card1Btn, Card2Btn, Card3Btn, Card4Btn,
-  // Card11Btn, Card21Btn, Card31Btn, Card41Btn,
-} from '../../../components/Image' 
+
+import HomeBottomDots from 'images/status1.png'
 
 const useStyles = makeStyles((theme) => ({
   cardWrapper: {
