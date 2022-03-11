@@ -77,7 +77,7 @@ const BigCards = styled(Cards)`
 `
 const Home: React.FC = () => {
   const { account } = useWeb3React();
-  console.warn = () => { };
+  // console.warn = () => { };
 
   return (
     <>
