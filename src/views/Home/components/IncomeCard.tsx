@@ -13,6 +13,7 @@ import { Card, CardBody, Text, Heading } from 'uikit'
 // import contracts from 'config/contracts'
 // import { formatAmount } from 'utils/formatInforNumbers'
 // import CardBusdValue from 'components/CardBusdValue'
+import MilliTime from './MilliTime'
 import { State } from '../../../state/types'
 
 const StyledCard = styled(Card)`
@@ -57,6 +58,7 @@ const IncomeCard = ({ img }) => {
   const [nodeNum, setNodeNum] = useState(0);
   const [smnNum, setSmnNum] = useState(0);
   const [smnPrice, setSmnPrice] = useState(0);
+  console.log("asdfsadf");
 
   return (
     <StyledCard>
@@ -66,7 +68,9 @@ const IncomeCard = ({ img }) => {
           <Heading scale="sm">
             Your Monthly Passive Income
           </Heading>
-          <Label labelSize='42px'>${smnNum * smnPrice}</Label>
+          <Label labelSize='42px'>
+            <MilliTime />
+          </Label>
           <Heading scale="sm">
             Based on {nodeNum} {nodeNum > 1 ? 'nodes' : 'node'} & {smnNum} SMN
           </Heading>

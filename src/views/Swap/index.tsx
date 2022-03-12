@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { CurrencyAmount, JSBI, Token, Trade } from 'toolkit/sdk'
-import { Button, Text, ArrowDownIcon,  useModal } from 'toolkit/uikit'
+import { Button, Text, ArrowDownIcon, useModal } from 'toolkit/uikit'
 import { useIsTransactionUnsupported } from 'hooks/Trades'
 import UnsupportedCurrencyFooter from 'components/UnsupportedCurrencyFooter'
 import { RouteComponentProps } from 'react-router-dom'
@@ -10,13 +10,13 @@ import SwapWarningTokens from 'config/constants/swapWarningTokens'
 import { getAddress } from 'utils/addressHelpers'
 import AddressInputPanel from './components/AddressInputPanel'
 // import { GreyCard } from '../../components/Card'
-import  { AutoColumn } from '../../components/Layout/Column'
+import { AutoColumn } from '../../components/Layout/Column'
 import ConfirmSwapModal from './components/ConfirmSwapModal'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import { AutoRow, RowBetween } from '../../components/Layout/Row'
 import AdvancedSwapDetailsDropdown from './components/AdvancedSwapDetailsDropdown'
 import confirmPriceImpactWithoutFee from './components/confirmPriceImpactWithoutFee'
-import { ArrowWrapper,  Wrapper } from './components/styleds'
+import { ArrowWrapper, Wrapper } from './components/styleds'
 import TradePrice from './components/TradePrice'
 import ImportTokenWarningModal from './components/ImportTokenWarningModal'
 // import ProgressSteps from './components/ProgressSteps'
@@ -97,13 +97,13 @@ export default function Swap({ history }: RouteComponentProps) {
 
   const parsedAmounts = showWrap
     ? {
-        [Field.INPUT]: parsedAmount,
-        [Field.OUTPUT]: parsedAmount,
-      }
+      [Field.INPUT]: parsedAmount,
+      [Field.OUTPUT]: parsedAmount,
+    }
     : {
-        [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
-        [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount,
-      }
+      [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
+      [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount,
+    }
 
   const { onSwitchTokens, onCurrencySelection, onUserInput, onChangeRecipient } = useSwapActionHandlers()
   // const isValid = !swapInputError
@@ -320,7 +320,7 @@ export default function Swap({ history }: RouteComponentProps) {
               currency={currencies[Field.INPUT]}
               onUserInput={handleTypeInput}
               onMax={handleMaxInput}
-              onCurrencySelect={handleInputSelect}
+              onCurrencySelect={handleInputSelect}  
               otherCurrency={currencies[Field.OUTPUT]}
               id="swap-currency-input"
             />
@@ -395,7 +395,7 @@ export default function Swap({ history }: RouteComponentProps) {
           </AutoColumn>
         </Wrapper>
       </AppBody>
-      
+
       {!swapIsUnsupported ? (
         <AdvancedSwapDetailsDropdown trade={trade} />
       ) : (

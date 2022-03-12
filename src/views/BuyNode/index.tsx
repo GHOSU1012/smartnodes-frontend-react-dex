@@ -156,7 +156,7 @@ const BuyNode = () => {
   return (
     <Page>
       <AppBody>
-        <AppHeader title='Buy Nodes' subtitle='Buy nodes with tokens' />
+        <AppHeader title='Buy Nodes' subtitle='Buy nodes with tokens' noConfig />
         {/* <StyledCard> */}
         <StyledCardBody>
           <div className='d-flex flex-row justify-content-between align-items-center' style={{ width: '80%' }}>
@@ -164,7 +164,7 @@ const BuyNode = () => {
             <StyledButton2 onClick={buyNode}>max</StyledButton2>
           </div>
           <StyledInput placeholder='input amount' id='amountToBuyNode' onChange={inputHandleChange} />
-          <StyledButton onClick={buyNode}>Buy $SMN</StyledButton>
+          <StyledButton onClick={buyNode}>Create Smart Node</StyledButton>
         </StyledCardBody>
         {/* </StyledCard> */}
       </AppBody>
