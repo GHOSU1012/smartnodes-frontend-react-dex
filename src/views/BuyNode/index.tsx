@@ -1,9 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import ViewListIcon from '@material-ui/icons/ViewList';
-import ViewModuleIcon from '@material-ui/icons/ViewModule';
-import ViewQuiltIcon from '@material-ui/icons/ViewQuilt';
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import styled from 'styled-components'
 import axios from 'axios'
 import { Card, CardBody, Heading } from 'uikit'
@@ -53,6 +48,30 @@ const StyledInput = styled.input`
     outline: 0;
   }
 `
+const StyledInput2 = styled.input`
+  color: ${({ theme }) => theme.colors.textSubtle};
+  font-size: 14px;
+  padding: 8px;
+  width:100%;
+  flex: 1;
+  border-radius: 10px 0px 0px 10px;
+  background: #3a3a3c;
+  border: 0px;
+  outline: 0;
+`
+
+const SelectStyle = styled.select`
+  color: white;
+  background: #3a3a3c;
+  border-radius: 0px 10px 10px 0px;
+  border: 0;
+  outline: 0;
+  height: 33px;
+  // with: 50px;
+  // width: 80px;
+`
+
+
 const Actions = styled.div`
   margin-top: 24px;
 `
@@ -93,6 +112,16 @@ const StyledButton = styled.button`
   }
 `;
 
+const InputStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: #5c5959;
+  padding: 10px;
+`
+
 const StyledButton2 = styled.button`
   align-items: center;
   border: 0;
@@ -125,6 +154,9 @@ const StyledButton2 = styled.button`
 
 const BuyNode = () => {
   const [nodeName, setNodeName] = useState('');
+  const [amount, setAmount] = useState('');
+  const [token, setToken] = useState('avax');
+
   const buyNode = async () => {
     try {
       const { ethereum } = window;
@@ -157,12 +189,13 @@ const BuyNode = () => {
   const inputHandleChange = (e) => {
     setNodeName(e.target.value);
   }
-
-  const [view, setView] = useState('list');
-
-  const handleChange = (event, nextView) => {
-    setView(nextView);
-  };
+  const inputHandleChange2 = (e) => {
+    setAmount(e.target.value);
+  }
+  const tokenChange = (e) => {
+    console.log(e.target.value);
+    setToken(e.target.value);
+  }
 
   return (
     <Page>
@@ -171,29 +204,38 @@ const BuyNode = () => {
         <CountDown />
 
         <StyledCardBody>
-          <div className='d-flex flex-row justify-content-between align-items-center' style={{ width: '80%' }}>
-            <div>AVAX</div>
-            <StyledButton2 onClick={buyNode}>max</StyledButton2>
-          </div>
+          <InputStyle>
+            <div className='d-flex flex-row justify-content-between align-items-center'>
+              {token === 'avax' ?
+                <div className='d-flex flex-row align-items-center' style={{ gap: '4px' }}>
+                  <img src='images/home/avax.png' width='25px' alt='avax' />
+                  <div style={{ color: 'white' }}>AVAX</div>
+                </div> :
+                <div className='d-flex flex-row align-items-center' style={{ gap: '4px' }}>
+                  <img src='images/home/usdce.png' alt='avax' width='25px' />
+                  <div style={{ color: 'white' }}>USDC.e</div>
+                </div>
+              }
+              <div style={{ color: 'white' }}>balance: 0</div>
+              {/* <StyledButton2 onClick={buyNode}>max</StyledButton2> */}
+            </div>
 
-          <ToggleButtonGroup orientation="vertical" value={view} exclusive onChange={handleChange}>
-            <ToggleButton value="list" aria-label="list">
-              <ViewListIcon />
-            </ToggleButton>
-            <ToggleButton value="module" aria-label="module">
-              <ViewModuleIcon />
-            </ToggleButton>
-            <ToggleButton value="quilt" aria-label="quilt">
-              <ViewQuiltIcon />
-            </ToggleButton>
-          </ToggleButtonGroup>
+            <div className='d-flex flex-row justify-content-between align-items-center mt-2' style={{ gap: '4px' }}>
+              <StyledInput2 placeholder='amount' id='amountToBuyNode' onChange={inputHandleChange2} />
+              <SelectStyle onChange={tokenChange}>
+                <option value="avax">AVAX
+                </option>
+                <option value="usdce">USDC.e</option>
+              </SelectStyle>
+            </div>
+          </InputStyle>
 
-          <StyledInput placeholder='node name' id='amountToBuyNode' onChange={inputHandleChange} />
+          <StyledInput placeholder='node name' id='nameToBuyNode' onChange={inputHandleChange} />
           <StyledButton onClick={buyNode}>Create Smart Node</StyledButton>
         </StyledCardBody>
 
       </AppBody>
-    </Page>
+    </Page >
   )
 }
 

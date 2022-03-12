@@ -26,7 +26,7 @@ const App: React.FC = () => {
               <Home />
             </Route>
             <Route exact strict path="/buy" component={BuyNode} />
-            <Route exact strict path="/swap" component={Swap} />
+            <Route exact strict path="/swap" component={CommingSoon} />
             <Route exact strict path="/treasury" component={CommingSoon} />
             <Route exact strict path="/whitepaper" component={CommingSoon} />
             <Route exact strict path="/tokenomics" component={CommingSoon} />

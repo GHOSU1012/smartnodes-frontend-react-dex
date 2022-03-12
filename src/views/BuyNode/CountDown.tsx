@@ -16,7 +16,6 @@ const CountDown = () => {
         return `${value}`;
     }
 
-
     useEffect(() => {
         const interval = setInterval(() => {
             calculateCountdown();

@@ -16,7 +16,7 @@ const CommingSoon = () => {
   const { t } = useTranslation()
 
   return (
-    <Page>
+    <div>
       <StyledNotFound>
         {/* <LogoIcon width="64px" mb="8px" /> */}
         <img src='images/Logo-02.png' style={{ width: '80px' }} alt='commingson'/>
@@ -26,7 +26,7 @@ const CommingSoon = () => {
           {t('Back Home')}
         </Button> */}
       </StyledNotFound>
-    </Page>
+    </div>
   )
 }
 
