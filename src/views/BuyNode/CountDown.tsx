@@ -8,14 +8,6 @@ const CountDown = () => {
     const [seconds, setSeconds] = useState(0);
     const [timeRemaining, setTimeRemaining] = useState(0);
     const endDate = new Date("March 19, 2022 00:00:00");
-    // console.log(endDate);
-    // componentWillUnmount() {
-    //     clearTimeout(timerID);
-    // }
-
-    // onEndDateChange = endDate => {
-    //     this.setState({ endDate });
-    // }
 
     const getTwoDigitValue = (value) => {
         if (value < 10) {
