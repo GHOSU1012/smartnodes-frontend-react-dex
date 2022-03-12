@@ -5,7 +5,7 @@ const MenuButton = styled(Button)`
   color: ${({ theme }) => theme.colors.text};
   padding: 0 3px;
   border-radius: 8px;
-  font-weight: 300;
+  // font-weight: 300;
   justify-content: right;
 `;
 MenuButton.defaultProps = {

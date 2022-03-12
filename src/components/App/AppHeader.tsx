@@ -18,8 +18,9 @@ const AppHeaderContainer = styled(Flex)`
   align-items: center;
   justify-content: space-between;
   padding: 24px;
+  padding-bottom: 6px;
   width: 100%;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  // border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
 `
 
 const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig = false }) => {
@@ -32,7 +33,7 @@ const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig 
           </IconButton>
         )}
         <Flex flexDirection="column">
-          <Text mb="10px" fontFamily="Osiris" fontSize="24px">{title}</Text>
+          <Text mb="2px" fontFamily="Osiris" fontSize="24px">{title}</Text>
           <Flex alignItems="center">
             {helper && <QuestionHelper text={helper} mr="4px" />}
             <Text color="textSubtle" fontSize="14px">

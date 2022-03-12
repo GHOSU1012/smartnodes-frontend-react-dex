@@ -13,7 +13,7 @@ const TransactionState = styled.div<{ pending: boolean; success?: boolean }>`
   text-decoration: none !important;
   border-radius: 0.5rem;
   padding: 0.25rem 0rem;
-  font-weight: 500;
+  // font-weight: 500;
   font-size: 0.825rem;
   color: ${({ theme }) => theme.colors.primary};
 `

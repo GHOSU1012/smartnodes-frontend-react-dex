@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'
+import ViewListIcon from '@material-ui/icons/ViewList';
+import ViewModuleIcon from '@material-ui/icons/ViewModule';
+import ViewQuiltIcon from '@material-ui/icons/ViewQuilt';
+import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import styled from 'styled-components'
 import axios from 'axios'
 import { Card, CardBody, Heading } from 'uikit'
 import { ethers } from 'ethers';
 import { AppHeader, AppBody } from '../../components/App'
 import Page from '../Page'
-
+import CountDown from './CountDown'
 
 // import Web3 from 'web3';s
 
@@ -34,7 +39,7 @@ const RowBlockBetween = styled.div`
 
 const StyledInput = styled.input`
   color: ${({ theme }) => theme.colors.textSubtle};
-  font-size: 20px;
+  font-size: 14px;
   margin-bottom: 22px;
   margin-top: 24px;
   padding: 8px;
@@ -153,20 +158,40 @@ const BuyNode = () => {
     setNodeName(e.target.value);
   }
 
+  const [view, setView] = useState('list');
+
+  const handleChange = (event, nextView) => {
+    setView(nextView);
+  };
+
   return (
     <Page>
       <AppBody>
-        <AppHeader title='Buy Nodes' subtitle='Buy nodes with tokens' noConfig />
-        {/* <StyledCard> */}
+        <AppHeader title='Presale' subtitle='Presale ends in' noConfig />
+        <CountDown />
+
         <StyledCardBody>
           <div className='d-flex flex-row justify-content-between align-items-center' style={{ width: '80%' }}>
             <div>AVAX</div>
             <StyledButton2 onClick={buyNode}>max</StyledButton2>
           </div>
-          <StyledInput placeholder='input amount' id='amountToBuyNode' onChange={inputHandleChange} />
+
+          <ToggleButtonGroup orientation="vertical" value={view} exclusive onChange={handleChange}>
+            <ToggleButton value="list" aria-label="list">
+              <ViewListIcon />
+            </ToggleButton>
+            <ToggleButton value="module" aria-label="module">
+              <ViewModuleIcon />
+            </ToggleButton>
+            <ToggleButton value="quilt" aria-label="quilt">
+              <ViewQuiltIcon />
+            </ToggleButton>
+          </ToggleButtonGroup>
+
+          <StyledInput placeholder='node name' id='amountToBuyNode' onChange={inputHandleChange} />
           <StyledButton onClick={buyNode}>Create Smart Node</StyledButton>
         </StyledCardBody>
-        {/* </StyledCard> */}
+
       </AppBody>
     </Page>
   )

@@ -45,7 +45,7 @@ import SwapWarningModal from './components/SwapWarningModal'
 
 const Label = styled(Text)`
   font-size: 12px;
-  font-weight: bold;
+  // font-weight: bold;
   color: ${({ theme }) => theme.colors.secondary};
 `
 

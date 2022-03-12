@@ -18,7 +18,7 @@ interface TransferNftModalProps {
 }
 
 const Value = styled(Text)`
-  font-weight: 600;
+  // font-weight: 600;
 `
 
 const ModalContent = styled.div`

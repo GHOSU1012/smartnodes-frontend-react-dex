@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const BaseLabel = styled.label`
   color: ${({ theme }) => theme.colors.text};
   display: block;
-  font-weight: 600;
+  // font-weight: 600;
   margin-bottom: 8px;
 `
 

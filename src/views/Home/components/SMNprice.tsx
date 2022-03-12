@@ -56,10 +56,11 @@ const SMNprice = ({ title, val1, val2, img }) => {
             {title}
           </Heading>
           <RowBlock>
-            <Label size='20px'>{val1}</Label>
+            <Label size='20px'>_</Label>
+            {/* <Label size='20px'>{val1}</Label>
             {val2 != null ?
               <PlusLabel color={val2} size='16px'>{val2 >= 0 ? `+${val2}` : val2}%</PlusLabel> : ''
-            }
+            } */}
           </RowBlock>
         </StyledCardBody>
         {/* <StyledCardBody> */}

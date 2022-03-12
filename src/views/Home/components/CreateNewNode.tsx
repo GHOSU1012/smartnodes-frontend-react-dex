@@ -29,7 +29,7 @@ const RowBlockBetween = styled.div`
 
 const StyledInput = styled.input`
   color: ${({ theme }) => theme.colors.textSubtle};
-  font-size: 20px;
+  font-size: 14px;
   margin-bottom: 22px;
   margin-top: 24px;
   padding: 8px;
@@ -125,7 +125,7 @@ const CreateNewNode = (myAccount) => {
         <Heading scale="sm">
           Create New Node
         </Heading>
-        <StyledInput placeholder='Input node name' id='nodeNameInput'onChange={inputHandleChange} />
+        <StyledInput placeholder='node name' id='nodeNameInput'onChange={inputHandleChange} />
         <StyledButton onClick={createNewNodeFunc}>Create New Node</StyledButton>
       </StyledCardBody>
     </StyledCard>

@@ -23,8 +23,8 @@ const style = {
 
 const Subheading = styled(Text).attrs({ bold: true })<SubheadingProps>`
   font-size: ${({ scale }) => style[scale || scales.MD].fontSize};
-  font-weight: 200;
-  line-height: 1.1;
+  // font-weight: 200;
+  // line-height: 1.1;
 
   ${({ theme }) => theme.mediaQueries.lg} {
     font-size: ${({ scale }) => style[scale || scales.MD].fontSizeLg};

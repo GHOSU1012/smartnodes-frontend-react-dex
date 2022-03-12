@@ -26,7 +26,7 @@ export const ActionContainer = styled.div`
 `
 
 export const ActionTitles = styled.div`
-  font-weight: 600;
+  // font-weight: 600;
   font-size: 12px;
 `
 

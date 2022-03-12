@@ -28,7 +28,7 @@ export const StyledTag = styled.div<ThemedProps>`
   border-radius: 8px;
   color: #ffffff;
   display: inline-flex;
-  font-weight: 400;
+  // font-weight: 400;
   white-space: nowrap;
 
   & > svg {

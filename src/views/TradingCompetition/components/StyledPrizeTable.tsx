@@ -9,7 +9,7 @@ export const Td = styled.td`
 `
 
 export const BoldTd = styled(Td)`
-  font-weight: 600;
+  // font-weight: 600;
 `
 
 export const StyledPrizeTable = styled.table`

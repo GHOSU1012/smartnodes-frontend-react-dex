@@ -8,6 +8,8 @@ import PageLoader from './components/Loader/PageLoader'
 import history from './routerHistory'
 import Swap from './views/Swap'
 import BuyNode from './views/BuyNode'
+// import NotFound from './views/NotFound'
+import CommingSoon from './views/CommingSoon'
 
 const Home = lazy(() => import('./views/Home'))
 
@@ -23,8 +25,11 @@ const App: React.FC = () => {
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route exact strict path="/swap" component={Swap} />
             <Route exact strict path="/buy" component={BuyNode} />
+            <Route exact strict path="/swap" component={Swap} />
+            <Route exact strict path="/treasury" component={CommingSoon} />
+            <Route exact strict path="/whitepaper" component={CommingSoon} />
+            <Route exact strict path="/tokenomics" component={CommingSoon} />
             <Route>
               <Redirect to="/" />
             </Route>

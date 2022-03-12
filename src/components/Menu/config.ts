@@ -8,8 +8,8 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     href: '/',
   },
   {
-    label: t('BuyNode'),
-    icon: '/images/home/farm.png',
+    label: t('Presale'),
+    icon: '/images/home/presale.png',
     href: '/buy',
   },
   {
@@ -19,18 +19,18 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   },
   {
     label: t('Treasury'),
-    icon: '/images/home/farm.png',
-    href: '/Treasury',
+    icon: '/images/home/treasury.png',
+    href: '/treasury',
   },
   {
     label: t('Whitepaper'),
-    icon: '/images/home/farm.png',
-    href: '/Whitepaper',
+    icon: '/images/home/whitepaper.png',
+    href: '/whitepaper',
   },
   {
     label: t('Tokenomics'),
-    icon: '/images/home/farm.png',
-    href: '/Tokenomics',
+    icon: '/images/home/tokenomics.png',
+    href: '/tokenomics',
   },
 ]
 

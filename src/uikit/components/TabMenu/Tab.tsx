@@ -15,8 +15,8 @@ const Tab = styled.button<TabProps>`
   flex-grow: 1;
   padding: ${getPadding};
   border-radius: ${getBorderRadius};
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 14px;
+  // font-weight: 600;
 
   ${({ theme }) => theme.mediaQueries.md} {
     flex-grow: 0;

@@ -11,7 +11,7 @@ interface EnteredTagProps {
 }
 
 const StyledEnteredTag = styled(Tag)`
-  font-weight: bold;
+  // font-weight: bold;
   text-transform: uppercase;
   background: ${({ theme }) => theme.colors.background};
 `

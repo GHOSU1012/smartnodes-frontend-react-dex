@@ -27,7 +27,7 @@ const style = {
 
 const Heading = styled(Text).attrs({ bold: true })<HeadingProps>`
   font-size: ${({ scale }) => style[scale || scales.SM].fontSize};
-  font-weight: 600;
+  // font-weight: 600;
   line-height: 1;
 
   ${({ theme }) => theme.mediaQueries.lg} {

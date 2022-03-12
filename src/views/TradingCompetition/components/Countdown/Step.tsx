@@ -31,7 +31,7 @@ const FutureWrapper = styled(Flex)`
 
 const StyledText = styled(Text)`
   margin-top: 4px;
-  font-weight: 600;
+  // font-weight: 600;
   font-size: 12px;
 `
 

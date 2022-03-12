@@ -65,8 +65,8 @@ export const StepNumber = styled.div<StatusProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 600;
-  font-size: 32px;
+  // font-weight: 600;
+  font-size: 28px;
   width: 48px;
   height: 48px;
   z-index: 1;

@@ -28,7 +28,15 @@ const StyledCardBody = styled(CardBody)`
   flex-direction: row;
   justify-content: space-between
 `
-
+const CommingSoon = styled.div`
+display: flex;
+justify-content: center;
+font-size: 28px;
+color: #514e4e;
+// font-weight: bold;
+align-items: center;
+height: 100%;
+`
 const DEFAULT_TIME_WINDOW: Duration = { weeks: 1 }
 const ONE_HOUR_SECONDS = 3600
 
@@ -43,15 +51,15 @@ const PriceChart = () => {
   const currentDate = format(new Date(), 'MMM d, yyyy')
 
   // const getLatestValueDisplay = () => {
-    // let valueToDisplay = null
-    // if (priceData) valueToDisplay = formatAmount(priceData[priceData.length - 1].open)
-    // if (hoverValue) {
-    //   valueToDisplay = formatAmount(hoverValue)
-    // }
+  // let valueToDisplay = null
+  // if (priceData) valueToDisplay = formatAmount(priceData[priceData.length - 1].open)
+  // if (hoverValue) {
+  //   valueToDisplay = formatAmount(hoverValue)
+  // }
 
-    // return valueToDisplay ? (
-      // <Text fontSize="24px" bold>
-        // {/* ${valueToDisplay} */}
+  // return valueToDisplay ? (
+  // <Text fontSize="24px" bold>
+  // {/* ${valueToDisplay} */}
   //     {/* </Text>
   //   ) : (
   //     <Skeleton height="36px" width="128px" />
@@ -65,17 +73,20 @@ const PriceChart = () => {
           <Heading scale='lg' mb='4px'>Price Chart</Heading>
           <Label>SMN/USD</Label>
         </div>
-        <Flex flexDirection="column" px="24px">
-          {/* {getLatestValueDisplay()} */}
+
+        {/* <Flex flexDirection="column" px="24px">
           $75.03
           <Text small color="textSubtle">
             {hoverDate || currentDate}
           </Text>
-        </Flex>
+        </Flex> */}
       </StyledCardBody>
-      {/* <Box px="24px" height='250px'>
-        <CandleChart data={priceData} setValue={setHoverValue} setLabel={setHoverDate} />
-      </Box> */}
+      <Box px="24px" height='250px'>
+        <CommingSoon>
+          Comming Soon
+        </CommingSoon>
+        {/* <CandleChart data={priceData} setValue={setHoverValue} setLabel={setHoverDate} /> */}
+      </Box>
     </StyledCard>
   )
 }

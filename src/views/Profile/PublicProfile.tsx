@@ -64,7 +64,7 @@ const ResponsiveText = styled(Text)`
 
 const AddressLink = styled(Link)`
   display: inline-block;
-  font-weight: 400;
+  // font-weight: 400;
   font-size: 12px;
   overflow: hidden;
   text-overflow: ellipsis;

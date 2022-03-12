@@ -3,16 +3,16 @@ import { ChainId, Token } from 'toolkit/sdk'
 export const CAKE: { [chainId: number]: Token } = {
   [ChainId.MAINNET]: new Token(
     ChainId.MAINNET,
-    // '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
-    process.env.REACT_APP_CAKETOKEN,
+    '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    // process.env.REACT_APP_CAKETOKEN,
     18,
     'BLH',
     'BlueHorizon Token',
   ),
   [ChainId.TESTNET]: new Token(
     ChainId.TESTNET,
-    // '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
-    process.env.REACT_APP_CAKETOKEN,
+    '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+    // process.env.REACT_APP_CAKETOKEN,
     18,
     'BLH',
     'BlueHorizon Token',
@@ -21,16 +21,16 @@ export const CAKE: { [chainId: number]: Token } = {
 export const BUSD: { [chainId: number]: Token } = {
   [ChainId.MAINNET]: new Token(
     ChainId.MAINNET,
-    // '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
-    process.env.REACT_APP_BUSDTOKEN,
+    '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+    // process.env.REACT_APP_BUSDTOKEN,
     18,
     'BUSD',
     'Binance USD',
   ),
   [ChainId.TESTNET]: new Token(
     ChainId.TESTNET,
-    // '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee',
-    process.env.REACT_APP_BUSDTOKEN,
+    '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee',
+    // process.env.REACT_APP_BUSDTOKEN,
     18,
     'BUSD',
     'Binance USD',
