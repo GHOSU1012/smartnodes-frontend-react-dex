@@ -5,14 +5,14 @@ const MilliTime = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCountDown(countDown + 0.00128);
+            setCountDown(countDown + 0.028);
         }, 30);
 
         return () => clearInterval(interval);
     });
 
     return (
-        <div>${parseFloat(countDown.toString()).toFixed(4)}</div>
+        <div>{parseFloat(countDown.toString()).toFixed(3)}</div>
     );
 };
 

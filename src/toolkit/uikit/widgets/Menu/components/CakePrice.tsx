@@ -41,7 +41,7 @@ const Wrapper = styled.div`
 `
 
 const CakePrice: React.FC<Props> = ({ cakePriceUsd }) => {
-  const href = `https://discord.com/`
+  const href = `https://discord.gg/Smartnodes`
   return (
     <PriceWrapper>
       {/* <img src={sidebarBalanceLeft} alt="balance left" /> */}

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable import/no-cycle */
-import invariant from 'tiny-invariant'
+// import invariant from 'tiny-invariant'
 import JSBI from 'jsbi'
 import { Token, currencyEquals } from '../token'
 import { TokenAmount } from './tokenAmount'
@@ -57,14 +57,14 @@ export class Price extends Fraction {
   }
 
   public multiply(other: Price): Price {
-    invariant(currencyEquals(this.quoteCurrency, other.baseCurrency), 'TOKEN')
+    // invariant(currencyEquals(this.quoteCurrency, other.baseCurrency), 'TOKEN')
     const fraction = super.multiply(other)
     return new Price(this.baseCurrency, other.quoteCurrency, fraction.denominator, fraction.numerator)
   }
 
   // performs floor division on overflow
   public quote(currencyAmount: CurrencyAmount): CurrencyAmount {
-    invariant(currencyEquals(currencyAmount.currency, this.baseCurrency), 'TOKEN')
+    // invariant(currencyEquals(currencyAmount.currency, this.baseCurrency), 'TOKEN')
     if (this.quoteCurrency instanceof Token) {
       return new TokenAmount(this.quoteCurrency, super.multiply(currencyAmount.raw).quotient)
     }

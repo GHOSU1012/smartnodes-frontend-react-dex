@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
-import invariant from 'tiny-invariant'
+// import invariant from 'tiny-invariant'
 import JSBI from 'jsbi'
 import _Big from 'big.js'
 import toFormat from 'toformat'
@@ -38,12 +38,12 @@ export class CurrencyAmount extends Fraction {
   }
 
   public add(other: CurrencyAmount): CurrencyAmount {
-    invariant(currencyEquals(this.currency, other.currency), 'TOKEN')
+    // invariant(currencyEquals(this.currency, other.currency), 'TOKEN')
     return new CurrencyAmount(this.currency, JSBI.add(this.raw, other.raw))
   }
 
   public subtract(other: CurrencyAmount): CurrencyAmount {
-    invariant(currencyEquals(this.currency, other.currency), 'TOKEN')
+    // invariant(currencyEquals(this.currency, other.currency), 'TOKEN')
     return new CurrencyAmount(this.currency, JSBI.subtract(this.raw, other.raw))
   }
 
@@ -60,7 +60,7 @@ export class CurrencyAmount extends Fraction {
     format?: object,
     rounding: Rounding = Rounding.ROUND_DOWN
   ): string {
-    invariant(decimalPlaces <= this.currency.decimals, 'DECIMALS')
+    // invariant(decimalPlaces <= this.currency.decimals, 'DECIMALS')
     return super.toFixed(decimalPlaces, format, rounding)
   }
 

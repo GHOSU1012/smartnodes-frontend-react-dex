@@ -93,7 +93,7 @@ const TotalClaimedSMN = ({ title, val1, val2, img, account }) => {
             {title}
           </Heading>
           <RowBlock>
-            <Label size='20px'>{claimedSMN}</Label>
+            <Label size='13px'>{claimedSMN}</Label>
             {val2 != null ?
               <PlusLabel color={val2} size='16px'>{val2 >= 0 ? `+${val2}` : val2}%</PlusLabel> : ''
             }

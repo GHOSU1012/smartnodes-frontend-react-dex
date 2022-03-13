@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Flex,  IconButton, ArrowBackIcon } from 'toolkit/uikit'
+import { Text, Flex, IconButton, ArrowBackIcon } from 'toolkit/uikit'
 import { Link } from 'react-router-dom'
 import Settings from './Settings'
 // import Transactions from './Transactions'
@@ -16,7 +16,7 @@ interface Props {
 
 const AppHeaderContainer = styled(Flex)`
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 24px;
   padding-bottom: 6px;
   width: 100%;
@@ -32,7 +32,7 @@ const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig 
             <ArrowBackIcon width="32px" />
           </IconButton>
         )}
-        <Flex flexDirection="column">
+        <Flex flexDirection="column" alignItems="center">
           <Text mb="2px" fontFamily="Osiris" fontSize="24px">{title}</Text>
           <Flex alignItems="center">
             {helper && <QuestionHelper text={helper} mr="4px" />}

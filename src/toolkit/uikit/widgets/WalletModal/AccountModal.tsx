@@ -18,7 +18,7 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
     <Text
       fontSize="20px"
       bold
-      style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }}
+      style={{ color: 'white', whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }}
     >
       {account}
     </Text>

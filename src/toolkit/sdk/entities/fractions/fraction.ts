@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import invariant from 'tiny-invariant'
+// import invariant from 'tiny-invariant'
 import JSBI from 'jsbi'
 import _Decimal from 'decimal.js-light'
 import _Big, { RoundingMode } from 'big.js'
@@ -128,8 +128,8 @@ export class Fraction {
     format: object = { groupSeparator: '' },
     rounding: Rounding = Rounding.ROUND_HALF_UP
   ): string {
-    invariant(Number.isInteger(significantDigits), `${significantDigits} is not an integer.`)
-    invariant(significantDigits > 0, `${significantDigits} is not positive.`)
+    // invariant(Number.isInteger(significantDigits), `${significantDigits} is not an integer.`)
+    // invariant(significantDigits > 0, `${significantDigits} is not positive.`)
 
     Decimal.set({ precision: significantDigits + 1, rounding: toSignificantRounding[rounding] })
     const quotient = new Decimal(this.numerator.toString())
@@ -143,8 +143,8 @@ export class Fraction {
     format: object = { groupSeparator: '' },
     rounding: Rounding = Rounding.ROUND_HALF_UP
   ): string {
-    invariant(Number.isInteger(decimalPlaces), `${decimalPlaces} is not an integer.`)
-    invariant(decimalPlaces >= 0, `${decimalPlaces} is negative.`)
+    // invariant(Number.isInteger(decimalPlaces), `${decimalPlaces} is not an integer.`)
+    // invariant(decimalPlaces >= 0, `${decimalPlaces} is negative.`)
 
     Big.DP = decimalPlaces
     Big.RM = toFixedRounding[rounding]

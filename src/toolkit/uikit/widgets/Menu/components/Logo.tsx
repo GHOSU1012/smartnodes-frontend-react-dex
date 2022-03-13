@@ -51,11 +51,6 @@ const StyledLink = styled(Link)`
   }
 `
 
-// const CustomLogo = styled.div`
-//   background-image: url('images/logo.png');
-//   height: 30px;
-//   width: 30px;
-// `
 
 const Logo: React.FC<Props> = ({ isPushed, togglePush,  href }) => {
   const isAbsoluteUrl = href.startsWith('http')

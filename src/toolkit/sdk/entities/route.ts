@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable import/no-cycle */
-import invariant from 'tiny-invariant'
+// import invariant from 'tiny-invariant'
 import { ChainId } from '../constants'
 
 import { Currency, ETHER } from './currency'
@@ -21,27 +21,27 @@ export class Route {
   public readonly midPrice: Price
 
   public constructor(pairs: Pair[], input: Currency, output?: Currency) {
-    invariant(pairs.length > 0, 'PAIRS')
-    invariant(
-      pairs.every(pair => pair.chainId === pairs[0].chainId),
-      'CHAIN_IDS'
-    )
-    invariant(
-      (input instanceof Token && pairs[0].involvesToken(input)) ||
-        (input === ETHER && pairs[0].involvesToken(WETH[pairs[0].chainId])),
-      'INPUT'
-    )
-    invariant(
-      typeof output === 'undefined' ||
-        (output instanceof Token && pairs[pairs.length - 1].involvesToken(output)) ||
-        (output === ETHER && pairs[pairs.length - 1].involvesToken(WETH[pairs[0].chainId])),
-      'OUTPUT'
-    )
+    // invariant(pairs.length > 0, 'PAIRS')
+    // invariant(
+    //   pairs.every(pair => pair.chainId === pairs[0].chainId),
+    //   'CHAIN_IDS'
+    // )
+    // invariant(
+    //   (input instanceof Token && pairs[0].involvesToken(input)) ||
+    //     (input === ETHER && pairs[0].involvesToken(WETH[pairs[0].chainId])),
+    //   'INPUT'
+    // )
+    // invariant(
+    //   typeof output === 'undefined' ||
+    //     (output instanceof Token && pairs[pairs.length - 1].involvesToken(output)) ||
+    //     (output === ETHER && pairs[pairs.length - 1].involvesToken(WETH[pairs[0].chainId])),
+    //   'OUTPUT'
+    // )
 
     const path: Token[] = [input instanceof Token ? input : WETH[pairs[0].chainId]]
     for (const [i, pair] of pairs.entries()) {
       const currentInput = path[i]
-      invariant(currentInput.equals(pair.token0) || currentInput.equals(pair.token1), 'PATH')
+      // invariant(currentInput.equals(pair.token0) || currentInput.equals(pair.token1), 'PATH')
       const output = currentInput.equals(pair.token0) ? pair.token1 : pair.token0
       path.push(output)
     }

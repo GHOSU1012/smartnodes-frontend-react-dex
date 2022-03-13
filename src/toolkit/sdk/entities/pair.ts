@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable import/no-cycle */
-import invariant from 'tiny-invariant'
+// import invariant from 'tiny-invariant'
 import JSBI from 'jsbi'
 import { pack, keccak256 } from '@ethersproject/solidity'
 import { getCreate2Address } from '@ethersproject/address'
@@ -91,7 +91,7 @@ export class Pair {
    * @param token token to return price of
    */
   public priceOf(token: Token): Price {
-    invariant(this.involvesToken(token), 'TOKEN')
+    // invariant(this.involvesToken(token), 'TOKEN')
     return token.equals(this.token0) ? this.token0Price : this.token1Price
   }
 
@@ -119,12 +119,12 @@ export class Pair {
   }
 
   public reserveOf(token: Token): TokenAmount {
-    invariant(this.involvesToken(token), 'TOKEN')
+    // invariant(this.involvesToken(token), 'TOKEN')
     return token.equals(this.token0) ? this.reserve0 : this.reserve1
   }
 
   public getOutputAmount(inputAmount: TokenAmount): [TokenAmount, Pair] {
-    invariant(this.involvesToken(inputAmount.token), 'TOKEN')
+    // invariant(this.involvesToken(inputAmount.token), 'TOKEN')
     if (JSBI.equal(this.reserve0.raw, ZERO) || JSBI.equal(this.reserve1.raw, ZERO)) {
       throw new InsufficientReservesError()
     }
@@ -144,7 +144,7 @@ export class Pair {
   }
 
   public getInputAmount(outputAmount: TokenAmount): [TokenAmount, Pair] {
-    invariant(this.involvesToken(outputAmount.token), 'TOKEN')
+    // invariant(this.involvesToken(outputAmount.token), 'TOKEN')
     if (
       JSBI.equal(this.reserve0.raw, ZERO) ||
       JSBI.equal(this.reserve1.raw, ZERO) ||
@@ -169,11 +169,11 @@ export class Pair {
     tokenAmountA: TokenAmount,
     tokenAmountB: TokenAmount
   ): TokenAmount {
-    invariant(totalSupply.token.equals(this.liquidityToken), 'LIQUIDITY')
+    // invariant(totalSupply.token.equals(this.liquidityToken), 'LIQUIDITY')
     const tokenAmounts = tokenAmountA.token.sortsBefore(tokenAmountB.token) // does safety checks
       ? [tokenAmountA, tokenAmountB]
       : [tokenAmountB, tokenAmountA]
-    invariant(tokenAmounts[0].token.equals(this.token0) && tokenAmounts[1].token.equals(this.token1), 'TOKEN')
+    // invariant(tokenAmounts[0].token.equals(this.token0) && tokenAmounts[1].token.equals(this.token1), 'TOKEN')
 
     let liquidity: JSBI
     if (JSBI.equal(totalSupply.raw, ZERO)) {
@@ -196,16 +196,16 @@ export class Pair {
     feeOn: boolean = false,
     kLast?: BigintIsh
   ): TokenAmount {
-    invariant(this.involvesToken(token), 'TOKEN')
-    invariant(totalSupply.token.equals(this.liquidityToken), 'TOTAL_SUPPLY')
-    invariant(liquidity.token.equals(this.liquidityToken), 'LIQUIDITY')
-    invariant(JSBI.lessThanOrEqual(liquidity.raw, totalSupply.raw), 'LIQUIDITY')
+    // invariant(this.involvesToken(token), 'TOKEN')
+    // invariant(totalSupply.token.equals(this.liquidityToken), 'TOTAL_SUPPLY')
+    // invariant(liquidity.token.equals(this.liquidityToken), 'LIQUIDITY')
+    // invariant(JSBI.lessThanOrEqual(liquidity.raw, totalSupply.raw), 'LIQUIDITY')
 
     let totalSupplyAdjusted: TokenAmount
     if (!feeOn) {
       totalSupplyAdjusted = totalSupply
     } else {
-      invariant(!!kLast, 'K_LAST')
+      // invariant(!!kLast, 'K_LAST')
       const kLastParsed = parseBigintIsh(kLast)
       if (!JSBI.equal(kLastParsed, ZERO)) {
         const rootK = sqrt(JSBI.multiply(this.reserve0.raw, this.reserve1.raw))

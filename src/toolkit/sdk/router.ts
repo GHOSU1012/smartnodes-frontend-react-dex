@@ -1,7 +1,7 @@
 /* eslint-disable default-case */
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable no-useless-constructor */
-import invariant from 'tiny-invariant'
+// import invariant from 'tiny-invariant'
 import { TradeType } from './constants'
 import { validateAndParseAddress } from './utils'
 import { CurrencyAmount, ETHER, Percent, Trade } from './entities'
@@ -81,8 +81,8 @@ export abstract class Router {
     const etherIn = trade.inputAmount.currency === ETHER
     const etherOut = trade.outputAmount.currency === ETHER
     // the router does not support both ether in and out
-    invariant(!(etherIn && etherOut), 'ETHER_IN_OUT')
-    invariant(!('ttl' in options) || options.ttl > 0, 'TTL')
+    // invariant(!(etherIn && etherOut), 'ETHER_IN_OUT')
+    // invariant(!('ttl' in options) || options.ttl > 0, 'TTL')
 
     const to: string = validateAndParseAddress(options.recipient)
     const amountIn: string = toHex(trade.maximumAmountIn(options.allowedSlippage))
@@ -120,7 +120,7 @@ export abstract class Router {
         }
         break
       case TradeType.EXACT_OUTPUT:
-        invariant(!useFeeOnTransfer, 'EXACT_OUT_FOT')
+        // invariant(!useFeeOnTransfer, 'EXACT_OUT_FOT')
         if (etherIn) {
           methodName = 'swapETHForExactTokens'
           // (uint amountOut, address[] calldata path, address to, uint deadline)

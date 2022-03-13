@@ -41,7 +41,7 @@ const StyledInput = styled.input`
   border-radius: 12px;
   background: #3a3a3c;
   text-align: center;
-  width: 80%;
+  width: 94%;
   border: 0px;
   :focus{
     border: 0px;
@@ -63,10 +63,12 @@ const StyledInput2 = styled.input`
 const SelectStyle = styled.select`
   color: white;
   background: #3a3a3c;
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 10px;
   border: 0;
   outline: 0;
   height: 33px;
+  width: 100%;
+  margin-top: 10px;
   // with: 50px;
   // width: 80px;
 `
@@ -89,7 +91,7 @@ const StyledButton = styled.button`
   padding: 12px;
   cursor: pointer;
   display: inline-flex;
-  width: 80%;
+  width: 94%;
   font-family: inherit;
   font-size: 16px;
   // font-weight: 600;
@@ -115,7 +117,7 @@ const StyledButton = styled.button`
 const InputStyle = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 70%;
   border: 1px solid;
   border-radius: 10px;
   border-color: #5c5959;
@@ -220,14 +222,14 @@ const BuyNode = () => {
               {/* <StyledButton2 onClick={buyNode}>max</StyledButton2> */}
             </div>
 
-            <div className='d-flex flex-row justify-content-between align-items-center mt-2' style={{ gap: '4px' }}>
-              <StyledInput2 placeholder='amount' id='amountToBuyNode' onChange={inputHandleChange2} />
-              <SelectStyle onChange={tokenChange}>
-                <option value="avax">AVAX
-                </option>
-                <option value="usdce">USDC.e</option>
-              </SelectStyle>
-            </div>
+            {/* <div className='d-flex flex-row justify-content-between align-items-center mt-2' style={{ gap: '4px' }}> */}
+            {/* <StyledInput2 placeholder='amount' id='amountToBuyNode' onChange={inputHandleChange2} /> */}
+            <SelectStyle onChange={tokenChange}>
+              <option value="avax">AVAX
+              </option>
+              <option value="usdce">USDC.e</option>
+            </SelectStyle>
+            {/* </div> */}
           </InputStyle>
 
           <StyledInput placeholder='node name' id='nameToBuyNode' onChange={inputHandleChange} />

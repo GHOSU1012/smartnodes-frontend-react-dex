@@ -30,10 +30,10 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
         mb={index < config.length - 1 ? "8px" : "0"}
       />
     ))}
-    <HelpLink href="" external>
+    {/* <HelpLink href="" external>
       <HelpIcon color="primary" mr="6px" />
       Learn how to connect
-    </HelpLink>
+    </HelpLink> */}
   </Modal>
 );
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable no-useless-constructor */
 // import IPancakePair from '@pancakeswap-libs/pancake-swap-core/build/IPancakePair.json'
-import invariant from 'tiny-invariant'
+// import invariant from 'tiny-invariant'
 import { Contract } from '@ethersproject/contracts'
 import { getNetwork } from '@ethersproject/networks'
 import { getDefaultProvider } from '@ethersproject/providers'
@@ -68,7 +68,7 @@ export abstract class Fetcher {
     tokenB: Token,
     provider = getDefaultProvider(getNetwork(tokenA.chainId))
   ): Promise<Pair> {
-    invariant(tokenA.chainId === tokenB.chainId, 'CHAIN_ID')
+    // invariant(tokenA.chainId === tokenB.chainId, 'CHAIN_ID')
     const address = Pair.getAddress(tokenA, tokenB)
     const [reserves0, reserves1] = await new Contract(address, 'IPancakePair.abi', provider).getReserves()
     const balances = tokenA.sortsBefore(tokenB) ? [reserves0, reserves1] : [reserves1, reserves0]

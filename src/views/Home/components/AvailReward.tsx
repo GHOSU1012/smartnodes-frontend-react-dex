@@ -14,9 +14,12 @@ import contracts from 'config/contracts'
 // import { formatAmount } from 'utils/formatInforNumbers'
 // import CardBusdValue from 'components/CardBusdValue'
 import { State } from '../../../state/types'
+import MilliTime from './MilliTime'
 
 const StyledCard = styled(Card)`
-  min-height: 200px;
+  // min-height: 200px;
+  // height: 210px;
+  // max-height: 210px;
 `
 
 const RowBlock = styled.div`
@@ -30,7 +33,7 @@ const RowBlockBetween = styled.div`
   justify-content: space-between;
 `
 
-const Label = styled.div<{labelSize: string}>`
+const Label = styled.div<{ labelSize: string }>`
   color: ${({ theme }) => theme.colors.textSubtle};
   font-size: ${props => props.labelSize};
   margin-bottom: 24px;
@@ -43,6 +46,7 @@ const StyledCardBody = styled(CardBody)`
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 `
 
@@ -53,9 +57,9 @@ const StyledButton = styled.button`
   padding: 12px;
   cursor: pointer;
   display: inline-flex;
-  width: 80%;
+  width: 84%;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 14px;
   // font-weight: 600;
   justify-content: center;
   letter-spacing: 0.03em;
@@ -79,15 +83,19 @@ const StyledButton = styled.button`
 
 const AvailReward = (account) => {
 
-  const [availReward, setRewardAvailable] = useState(0);
-  
+  // const [availReward, setRewardAvailable] = useState(0);
+
   return (
     <StyledCard>
       <StyledCardBody>
         <Heading scale="sm">
+
           Available Rewards
         </Heading>
-        <Label labelSize='42px'>{availReward} SMN</Label>
+        <div className="d-flex justify-content-between" style={{width:'190px'}}>
+          <Label labelSize='32px'><MilliTime /></Label>
+          <Label labelSize='20px' style={{marginTop:'33px'}}>SMN</Label>
+        </div>
         <StyledButton>Claim Rewards</StyledButton>
       </StyledCardBody>
     </StyledCard>

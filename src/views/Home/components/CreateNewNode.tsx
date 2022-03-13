@@ -13,7 +13,7 @@ const contractABI = tempABI.abi;
 const contractAddress = '0xa5CD786fDA5802BeD0138E3e591eEB52712DD9Ee';
 
 const StyledCard = styled(Card)`
-  min-height: 200px;
+  // min-height: 200px;
 `
 
 const RowBlock = styled.div`
@@ -36,7 +36,7 @@ const StyledInput = styled.input`
   border-radius: 12px;
   background: #3a3a3c;
   text-align: center;
-  width: 80%;
+  width: 84%;
   border: 0px;
   :focus{
     border: 0px;
@@ -50,6 +50,7 @@ const StyledCardBody = styled(CardBody)`
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 `
 
@@ -60,9 +61,9 @@ const StyledButton = styled.button`
   padding: 12px;
   cursor: pointer;
   display: inline-flex;
-  width: 80%;
+  width: 84%;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 14px;
   // font-weight: 600;
   justify-content: center;
   letter-spacing: 0.03em;

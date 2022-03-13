@@ -25,12 +25,12 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   {
     label: t('Whitepaper'),
     icon: '/images/home/whitepaper.png',
-    href: '/whitepaper',
+    href: 'https://docs.smartnodes.finance/',
   },
   {
     label: t('Tokenomics'),
     icon: '/images/home/tokenomics.png',
-    href: '/tokenomics',
+    href: 'https://docs.smartnodes.finance/smartnodes-token/tokenomics',
   },
 ]
 

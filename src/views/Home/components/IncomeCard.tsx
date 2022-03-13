@@ -13,11 +13,11 @@ import { Card, CardBody, Text, Heading } from 'uikit'
 // import contracts from 'config/contracts'
 // import { formatAmount } from 'utils/formatInforNumbers'
 // import CardBusdValue from 'components/CardBusdValue'
-import MilliTime from './MilliTime'
 import { State } from '../../../state/types'
 
 const StyledCard = styled(Card)`
-  height: 200px;
+  // height: 200px;
+  max-height: 182px;
 `
 
 // const RowBlock = styled.div`
@@ -37,14 +37,15 @@ const Label = styled.div<{ labelSize: string }>`
   color: ${({ theme }) => theme.colors.textSubtle};
   font-size: ${(p) => p.labelSize};
   margin-bottom: 24px;
-  margin-top: 24px;
+  margin-top: 10px;
 `
 const StyledCardBody = styled(CardBody)`
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between !important;
   align-items: center;
+  height: 100%;
+  padding-bottom:34px;
 `
 const StyledImg = styled.img`
   width: 160px;
@@ -68,8 +69,8 @@ const IncomeCard = ({ img }) => {
           <Heading scale="sm">
             Your Monthly Passive Income
           </Heading>
-          <Label labelSize='42px'>
-            <MilliTime />
+          <Label labelSize='33px'>
+            $10,245
           </Label>
           <Heading scale="sm">
             Based on {nodeNum} {nodeNum > 1 ? 'nodes' : 'node'} & {smnNum} SMN

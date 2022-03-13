@@ -3,7 +3,7 @@
 /* eslint-disable consistent-return */
 /* eslint-disable no-lonely-if */
 /* eslint-disable no-else-return */
-import invariant from 'tiny-invariant'
+// import invariant from 'tiny-invariant'
 
 import { ChainId, ONE, TradeType, ZERO } from '../constants'
 import { sortedInsert } from '../utils'
@@ -40,8 +40,8 @@ interface InputOutput {
 // in increasing order. i.e. the best trades have the most outputs for the least inputs and are sorted first
 export function inputOutputComparator(a: InputOutput, b: InputOutput): number {
   // must have same input and output token for comparison
-  invariant(currencyEquals(a.inputAmount.currency, b.inputAmount.currency), 'INPUT_CURRENCY')
-  invariant(currencyEquals(a.outputAmount.currency, b.outputAmount.currency), 'OUTPUT_CURRENCY')
+  // invariant(currencyEquals(a.inputAmount.currency, b.inputAmount.currency), 'INPUT_CURRENCY')
+  // invariant(currencyEquals(a.outputAmount.currency, b.outputAmount.currency), 'OUTPUT_CURRENCY')
   if (a.outputAmount.equalTo(b.outputAmount)) {
     if (a.inputAmount.equalTo(b.inputAmount)) {
       return 0
@@ -95,13 +95,13 @@ export interface BestTradeOptions {
 function wrappedAmount(currencyAmount: CurrencyAmount, chainId: ChainId): TokenAmount {
   if (currencyAmount instanceof TokenAmount) return currencyAmount
   if (currencyAmount.currency === ETHER) return new TokenAmount(WETH[chainId], currencyAmount.raw)
-  invariant(false, 'CURRENCY')
+  // invariant(false, 'CURRENCY')
 }
 
 function wrappedCurrency(currency: Currency, chainId: ChainId): Token {
   if (currency instanceof Token) return currency
   if (currency === ETHER) return WETH[chainId]
-  invariant(false, 'CURRENCY')
+  // invariant(false, 'CURRENCY')
 }
 
 /**
@@ -160,7 +160,7 @@ export class Trade {
     const amounts: TokenAmount[] = new Array(route.path.length)
     const nextPairs: Pair[] = new Array(route.pairs.length)
     if (tradeType === TradeType.EXACT_INPUT) {
-      invariant(currencyEquals(amount.currency, route.input), 'INPUT')
+      // invariant(currencyEquals(amount.currency, route.input), 'INPUT')
       amounts[0] = wrappedAmount(amount, route.chainId)
       for (let i = 0; i < route.path.length - 1; i++) {
         const pair = route.pairs[i]
@@ -169,7 +169,7 @@ export class Trade {
         nextPairs[i] = nextPair
       }
     } else {
-      invariant(currencyEquals(amount.currency, route.output), 'OUTPUT')
+      // invariant(currencyEquals(amount.currency, route.output), 'OUTPUT')
       amounts[amounts.length - 1] = wrappedAmount(amount, route.chainId)
       for (let i = route.path.length - 1; i > 0; i--) {
         const pair = route.pairs[i - 1]
@@ -208,7 +208,7 @@ export class Trade {
    * @param slippageTolerance tolerance of unfavorable slippage from the execution price of this trade
    */
   public minimumAmountOut(slippageTolerance: Percent): CurrencyAmount {
-    invariant(!slippageTolerance.lessThan(ZERO), 'SLIPPAGE_TOLERANCE')
+    // invariant(!slippageTolerance.lessThan(ZERO), 'SLIPPAGE_TOLERANCE')
     if (this.tradeType === TradeType.EXACT_OUTPUT) {
       return this.outputAmount
     } else {
@@ -227,7 +227,7 @@ export class Trade {
    * @param slippageTolerance tolerance of unfavorable slippage from the execution price of this trade
    */
   public maximumAmountIn(slippageTolerance: Percent): CurrencyAmount {
-    invariant(!slippageTolerance.lessThan(ZERO), 'SLIPPAGE_TOLERANCE')
+    // invariant(!slippageTolerance.lessThan(ZERO), 'SLIPPAGE_TOLERANCE')
     if (this.tradeType === TradeType.EXACT_INPUT) {
       return this.inputAmount
     } else {
@@ -262,16 +262,16 @@ export class Trade {
     originalAmountIn: CurrencyAmount = currencyAmountIn,
     bestTrades: Trade[] = []
   ): Trade[] {
-    invariant(pairs.length > 0, 'PAIRS')
-    invariant(maxHops > 0, 'MAX_HOPS')
-    invariant(originalAmountIn === currencyAmountIn || currentPairs.length > 0, 'INVALID_RECURSION')
+    // invariant(pairs.length > 0, 'PAIRS')
+    // invariant(maxHops > 0, 'MAX_HOPS')
+    // invariant(originalAmountIn === currencyAmountIn || currentPairs.length > 0, 'INVALID_RECURSION')
     const chainId: ChainId | undefined =
       currencyAmountIn instanceof TokenAmount
         ? currencyAmountIn.token.chainId
         : currencyOut instanceof Token
         ? currencyOut.chainId
         : undefined
-    invariant(chainId !== undefined, 'CHAIN_ID')
+    // invariant(chainId !== undefined, 'CHAIN_ID')
 
     const amountIn = wrappedAmount(currencyAmountIn, chainId)
     const tokenOut = wrappedCurrency(currencyOut, chainId)
@@ -350,16 +350,16 @@ export class Trade {
     originalAmountOut: CurrencyAmount = currencyAmountOut,
     bestTrades: Trade[] = []
   ): Trade[] {
-    invariant(pairs.length > 0, 'PAIRS')
-    invariant(maxHops > 0, 'MAX_HOPS')
-    invariant(originalAmountOut === currencyAmountOut || currentPairs.length > 0, 'INVALID_RECURSION')
+    // invariant(pairs.length > 0, 'PAIRS')
+    // invariant(maxHops > 0, 'MAX_HOPS')
+    // invariant(originalAmountOut === currencyAmountOut || currentPairs.length > 0, 'INVALID_RECURSION')
     const chainId: ChainId | undefined =
       currencyAmountOut instanceof TokenAmount
         ? currencyAmountOut.token.chainId
         : currencyIn instanceof Token
         ? currencyIn.chainId
         : undefined
-    invariant(chainId !== undefined, 'CHAIN_ID')
+    // invariant(chainId !== undefined, 'CHAIN_ID')
 
     const amountOut = wrappedAmount(currencyAmountOut, chainId)
     const tokenIn = wrappedCurrency(currencyIn, chainId)
