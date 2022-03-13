@@ -8,12 +8,7 @@ const PageHearder = styled.div`
   width: 100%;
   height: 300px;
   border-bottom: 1px solid #243d5c;
-  background-color: ${({theme})=>theme.colors.background};
-  // ${({ theme }) => theme.mediaQueries.nav} {
-    background-image: url('/images/home/bg.png');
-    background-repeat: no-repeat;
-    background-position: right;
-  // }
+
 `
 
 export default function Home() {

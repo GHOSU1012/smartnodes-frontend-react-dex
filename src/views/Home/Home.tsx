@@ -9,8 +9,8 @@ import TotalNodes from './components/TotalNodes'
 import SMNprice from './components/SMNprice'
 import AutoCompound from './components/AutoCompound'
 import IncomeCard from './components/IncomeCard'
-import PriceChart from './components/PriceChart'
 import NodesListCard from './components/NodesListCard'
+import PriceChart from './components/PriceChart'
 import AvailReward from './components/AvailReward'
 import CreateNewNode from './components/CreateNewNode'
 
@@ -90,12 +90,12 @@ const Home: React.FC = () => {
         </Cards>
         <BigCards>
           <IncomeCard img='images/income.jpg' />
-          <CustomCards>            
+          <CustomCards>
             <CreateNewNode myAccount={account} />
             <AvailReward account={account} />
           </CustomCards>
         </BigCards>
-        <BigCards>          
+        <BigCards>
           <PriceChart />
           <NodesListCard account={account} />
         </BigCards>

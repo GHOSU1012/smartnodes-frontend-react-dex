@@ -12,9 +12,6 @@ const StyledPage = styled.div`
   padding-top: 16px;
   padding-bottom: 16px;
   min-height: calc(100vh - 64px);
-  // background-image: url("/images/swap/bg.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100% !important;
 
   ${({ theme }) => theme.mediaQueries.xs} {
     background-size: auto;

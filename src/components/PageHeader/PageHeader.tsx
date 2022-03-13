@@ -5,10 +5,6 @@ import Container from '../Layout/Container'
 
 const Outer = styled(Box)<{ background?: string }>`
   background: ${({ theme, background }) => background || theme.colors.gradients.bubblegum};
-  // border-bottom: 1px solid #000000;
-  background-image: url('/images/farm/header-bg.png');
-  background-position: right ;
-  background-repeat: no-repeat;
   height: 250px;
 `
 
