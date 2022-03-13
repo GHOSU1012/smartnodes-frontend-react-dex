@@ -9,7 +9,7 @@ declare module 'styled-components' {
 
 const GlobalStyle = createGlobalStyle`
 * {
-  font-family: 'Osiris';
+  font-family: 'Osiris !important';
 }
 iframe {
   display: none;
@@ -23,7 +23,7 @@ body {
   }
 
   .osiris {
-    font-family: 'Osiris'
+    font-family: 'Osiris !important'
   }
 
   .mobile {
