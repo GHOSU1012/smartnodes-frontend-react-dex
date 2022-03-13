@@ -53,6 +53,7 @@ const StyledCardBody = styled(CardBody)`
 
 const TotalClaimedSMN = ({ title, val1, val2, img, account }) => {
   const [claimedSMN, setTokenPrice] = useState('Connect Wallet');
+  const [isConnected, setConnected] = useState(false);
 
   useEffect(() => {
     const getTotalClaimedSMN = async () => {
@@ -64,21 +65,24 @@ const TotalClaimedSMN = ({ title, val1, val2, img, account }) => {
           const signer = provider.getSigner();
           const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
-          console.log('TotalClaimedSMN--------------------------------');
+
           const val = await contract.getAllNodesRewards(account);
-          // const val=20;
-          console.log('totalClaimedSMN****************', val);
           setTokenPrice(val.toString());
-          console.log(`myaccount: ${account}`)
-          console.log(`TotalClaimedSMN: ${claimedSMN}`);
+          setConnected(true);
         }
         else {
-          console.log("Connection Error");
+          setTokenPrice('Connect Wallet');
+          setConnected(false);
         }
       } catch (err) {
-        if(account)
+        if (account) {
           setTokenPrice('0');
-        console.log(err);
+          setConnected(true);
+        }
+        else {
+          setTokenPrice('Connect Wallet');
+          setConnected(false);
+        }
       }
     }
 
@@ -93,7 +97,7 @@ const TotalClaimedSMN = ({ title, val1, val2, img, account }) => {
             {title}
           </Heading>
           <RowBlock>
-            <Label size='13px'>{claimedSMN}</Label>
+            <Label size={isConnected ? '20px' : '13px'}>{claimedSMN}</Label>
             {val2 != null ?
               <PlusLabel color={val2} size='16px'>{val2 >= 0 ? `+${val2}` : val2}%</PlusLabel> : ''
             }
