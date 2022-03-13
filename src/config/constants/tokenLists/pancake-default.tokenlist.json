@@ -147,12 +147,12 @@
       "logoURI": "https://pancakeswap.finance/images/tokens/0xe9e7cea3dedca5984780bafc599bd69add087d56.png"
     },
     {
-      "name": "BlueHorizon Token",
+      "name": "SmartNodes Token",
       "symbol": "BLH",
       "address": "0x4a34bB3432Dc497536a8dBf2fF31eE766B97a179",
       "chainId": 97,
       "decimals": 18,
-      "logoURI": "https://bluehorizon-origin.herokuapp.com/images/tokens/0xdcd7d3eee51a842825bda6c25d8f9ddb39a8e0bb.png"
+      "logoURI": "https://smartnodes-origin.herokuapp.com/images/tokens/0xdcd7d3eee51a842825bda6c25d8f9ddb39a8e0bb.png"
     }
   ]
 }

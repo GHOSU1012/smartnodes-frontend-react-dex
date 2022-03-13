@@ -2,10 +2,10 @@ import { ContextApi } from 'contexts/Localization/types'
 import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
-  title: 'BlueHorizon',
+  title: 'SmartNodes',
   description:
     // 'The most popular AMM on BSC by user count! Earn CAKE through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by PancakeSwap), NFTs, and more, on a platform you can trust.',
-    'BlueHorizon',
+    'SmartNodes',
   // image: 'https://pancakeswap.finance/images/hero.png',
   image: 'https://unsplash.com/photos/kFekXarnftM',
 }
@@ -26,15 +26,15 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
     //   }
     // case '/swap':
     //   return {
-    //     title: `${t('Swap')} | ${t('BlueHorizon')}`,
+    //     title: `${t('Swap')} | ${t('SmartNodes')}`,
     //   }
     // case '/Liquidity':
     //   return {
-    //     title: `${t('Liquidity')} | ${t('BlueHorizon')}`,
+    //     title: `${t('Liquidity')} | ${t('SmartNodes')}`,
     //   }
     // case '/farms':
     //   return {
-    //     title: `${t('Farms')} | ${t('BlueHorizon')}`,
+    //     title: `${t('Farms')} | ${t('SmartNodes')}`,
     //   }
     // case '/pools':
     //   return {

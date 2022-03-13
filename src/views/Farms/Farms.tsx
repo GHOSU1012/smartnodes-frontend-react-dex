@@ -389,9 +389,9 @@ const Farms: React.FC = () => {
     <>
       <PageHeader background="#2b2b2b">
         <Text color="text" fontSize="24px" bold fontFamily="Osiris" mb="10px">
-          {t('STAKE TOKENS TO EARN BLUEHORIZON')}
+          {t('STAKE TOKENS TO EARN SMARTNODES')}
         </Text>
-        <Text color="textSubtle" fontSize="16px">{t('Deposity fee will be used to buyback BlueHorizon')}</Text>
+        <Text color="textSubtle" fontSize="16px">{t('Deposity fee will be used to buyback SmartNodes')}</Text>
         {/* <NavLink exact activeClassName="active" to="/farms/auction" id="lottery-pot-banner">
           <Button p="0" variant="text">
             <Text color="primary" bold fontSize="16px" mr="4px">

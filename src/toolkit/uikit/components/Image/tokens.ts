@@ -9,7 +9,7 @@ const tokens = {
       97: process.env.REACT_APP_CAKETOKEN,
     },
     decimals: 18,
-    projectLink: "https://bluehorizon.art/",
+    projectLink: "https://smartnodes.art/",
   },
   txl: {
     symbol: "TXL",
