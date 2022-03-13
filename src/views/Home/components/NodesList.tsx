@@ -11,31 +11,31 @@ import TableRow from '@material-ui/core/TableRow';
 // import styled from 'styled-components'
 
 interface Column {
-  id: 'date' | 'nodes' | 'reward';
+  id: 'nodes' | 'date' | 'reward';
   label: string;
   minWidth?: number;
-  align?: 'center';
+  align?: 'right';
   format?: (value: number) => string;
 }
 
-const columns: readonly Column[] = [ 
-  { id: 'date', label: 'Creation Date', minWidth: 100, align: 'center' },
-  { id: 'nodes', label: 'Node Name', minWidth: 220, align: 'center' },
-  { id: 'reward', label: 'Rewards', minWidth: 100, align: 'center' },
+const columns: readonly Column[] = [
+  { id: 'nodes', label: 'Standalone Nodes', minWidth: 220 },
+  { id: 'date', label: 'Creation Date', minWidth: 100 },
+  { id: 'reward', label: 'Rewards', minWidth: 100, align: 'right' },
 ];
 
 interface Data {
+  nodes: string;
   date: string;
-  nodes: string;  
   reward: string;
 }
 
 function createData(
+  nodes: string,
   date: string,
-  nodes: string,  
   reward: string,
 ): Data {
-  return { date, nodes, reward };
+  return { nodes, date, reward };
 }
 
 const NodesList = (account) => {
@@ -65,8 +65,8 @@ const NodesList = (account) => {
   };
   // const classes = useStyles();
   return (
-    <Paper style={{ width: '100%', overflow: 'hidden', background: '#2b2b2b', boxShadow:'none' }} >
-      <TableContainer style={{ height: 440}} >
+    <Paper style={{ width: '100%', overflow: 'hidden', background: '#2b2b2b', boxShadow: 'none' }} >
+      <TableContainer style={{ height: 440 }} >
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow style={{ background: '#2b2b2b' }}>
@@ -74,7 +74,10 @@ const NodesList = (account) => {
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth, background: '#2b2b2b', color: '#faa21a', fontSize: '16px', paddingBottom:'0px' }}
+                  style={{
+                    minWidth: column.minWidth, background: '#2b2b2b', color: '#faa21a',
+                    fontSize: '14px', paddingBottom: '0px', fontFamily: 'Osiris'
+                  }}
                 >
                   {column.label}
                 </TableCell>

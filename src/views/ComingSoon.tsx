@@ -12,14 +12,14 @@ const StyledNotFound = styled.div`
   justify-content: center;
 `
 
-const CommingSoon = () => {
+const ComingSoon = () => {
   const { t } = useTranslation()
 
   return (
     <div>
       <StyledNotFound>
         {/* <LogoIcon width="64px" mb="8px" /> */}
-        <img src='images/Logo-02.png' style={{ width: '80px' }} alt='comingson'/>
+        <img src='images/Logo-02.png' style={{ width: '80px' }} alt='Comingson'/>
         {/* <Heading scale="xxl">404</Heading> */}
         <Text mb="22px" style={{ color: 'white', fontSize:'22px' }}>Coming Soon</Text>
         {/* <Button as="a" href="/" scale="sm">
@@ -30,4 +30,4 @@ const CommingSoon = () => {
   )
 }
 
-export default CommingSoon
+export default ComingSoon

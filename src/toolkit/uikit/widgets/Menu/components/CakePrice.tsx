@@ -6,28 +6,14 @@ import Skeleton from '../../../components/Skeleton/Skeleton'
 
 
 interface Props {
-  cakePriceUsd?: number
+  cakePriceUsd?: string,
+  link?: string
 }
 
 const PriceLink = styled.a`
   display: flex;
   align-items: center;
-  margin: auto;
-  padding-left: 16px;
-  svg {
-    transition: transform 0.3s;
-  }
-  :hover {
-    svg {
-      transform: scale(1.2);
-    }
-  }
-`
-
-const PriceLink1 = styled.a`
-  display: flex;
-  align-items: center;
-  margin: auto;
+  margin-left: 10px;
   padding-left: 16px;
   svg {
     transition: transform 0.3s;
@@ -52,28 +38,23 @@ const PriceWrapper = styled.div`
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  align-items: center;
-`
-const Wrapper1 = styled.div`
-  display: flex;
-  width: 100%;
-  align-items: center;
-  bottom:50px;
+  align-items: left;
 `
 
-const CakePrice: React.FC<Props> = ({ cakePriceUsd }) => {
-  const href = `https://discord.gg/Smartnodes`  
+const CakePrice: React.FC<Props> = ({ cakePriceUsd, link }) => {
+  const href = link;
   return (
     <PriceWrapper>
       {/* <img src={sidebarBalanceLeft} alt="balance left" /> */}
       <Wrapper>
         <PriceLink
           href={href}
-          target="_blank">
-          <img src='images/discord.png' alt="" width="32px" />
-          <Text color="text" bold ml="10px">Discord</Text>
+          target="_blank"
+        >
+          <img src={cakePriceUsd == 'Discord'?'images/discord.png':'images/twitter.png'} alt="" width="32px" />
+          <Text color="text" bold ml="10px">{cakePriceUsd}</Text>
         </PriceLink>
-        </Wrapper>
+      </Wrapper>
       <img src='images/dots.png' alt="balance dots" style={{ marginTop: "5px" }} />
     </PriceWrapper>
   )
