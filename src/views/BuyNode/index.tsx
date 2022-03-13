@@ -233,7 +233,7 @@ const BuyNode = () => {
           </InputStyle>
 
           <StyledInput placeholder='node name' id='nameToBuyNode' onChange={inputHandleChange} />
-          <StyledButton onClick={buyNode}>Create Smart Node</StyledButton>
+          <StyledButton onClick={buyNode}>Buy Smart Node</StyledButton>
         </StyledCardBody>
 
       </AppBody>

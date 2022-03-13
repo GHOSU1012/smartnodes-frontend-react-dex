@@ -66,8 +66,8 @@ const NodesList = (account) => {
   };
   // const classes = useStyles();
   return (
-    <Paper style={{ width: '100%', overflow: 'hidden', background: '#2b2b2b', boxShadow:'none' }} >
-      <TableContainer style={{ height: 440}} >
+    <Paper style={{ width: '100%', overflow: 'hidden', background: '#2b2b2b', boxShadow: 'none' }} >
+      <TableContainer style={{ height: 440 }} >
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow style={{ background: '#2b2b2b' }}>
@@ -75,7 +75,10 @@ const NodesList = (account) => {
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth, background: '#2b2b2b', color: '#faa21a', fontSize: '16px', paddingBottom:'0px' }}
+                  style={{
+                    minWidth: column.minWidth, background: '#2b2b2b', color: '#faa21a',
+                    fontSize: '14px', paddingBottom: '0px', fontFamily: 'Osiris'
+                  }}
                 >
                   {column.label}
                 </TableCell>

@@ -7,7 +7,7 @@ const CountDown = () => {
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
     const [timeRemaining, setTimeRemaining] = useState(0);
-    const endDate = new Date("March 19, 2022 00:00:00");
+    const endDate = new Date("March 17, 2022 10:00:00");
 
     const getTwoDigitValue = (value) => {
         if (value < 10) {
