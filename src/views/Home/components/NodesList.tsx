@@ -11,31 +11,31 @@ import TableRow from '@material-ui/core/TableRow';
 // import styled from 'styled-components'
 
 interface Column {
-  id: 'nodes' | 'date' | 'reward';
+  id: 'date' | 'nodes' | 'reward';
   label: string;
   minWidth?: number;
-  align?: 'right';
+  align?: 'center';
   format?: (value: number) => string;
 }
 
-const columns: readonly Column[] = [
-  { id: 'nodes', label: 'Standalone Nodes', minWidth: 220 },
-  { id: 'date', label: 'Creation Date', minWidth: 100 },
-  { id: 'reward', label: 'Rewards', minWidth: 100, align: 'right' },
+const columns: readonly Column[] = [ 
+  { id: 'date', label: 'Creation Date', minWidth: 100, align: 'center' },
+  { id: 'nodes', label: 'Node Name', minWidth: 220, align: 'center' },
+  { id: 'reward', label: 'Rewards', minWidth: 100, align: 'center' },
 ];
 
 interface Data {
-  nodes: string;
   date: string;
+  nodes: string;  
   reward: string;
 }
 
 function createData(
-  nodes: string,
   date: string,
+  nodes: string,  
   reward: string,
 ): Data {
-  return { nodes, date, reward };
+  return { date, nodes, reward };
 }
 
 const NodesList = (account) => {

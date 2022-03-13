@@ -83,7 +83,7 @@ const PriceChart = () => {
       </StyledCardBody>
       <Box px="24px" height='250px'>
         <CommingSoon>
-          Comming Soon
+          Coming Soon
         </CommingSoon>
         {/* <CandleChart data={priceData} setValue={setHoverValue} setLabel={setHoverDate} /> */}
       </Box>
