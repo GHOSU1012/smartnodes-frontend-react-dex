@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
     },
     flexDirection: 'column',
-    fontFamily: 'Osiris !important',
+    fontFamily: 'RobotoRegular',
     padding: '30px 20px',
     color: 'white',
     fontSize: 16,

@@ -3,10 +3,6 @@ import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 import { Duration, format, fromUnixTime } from 'date-fns'
 import { Card, CardBody, Text, Box, Heading, Flex, Skeleton } from 'uikit'
-// import { useTokenPriceData } from 'hooks/useInfo'
-// import contracts from 'config/contracts'
-// import { formatAmount } from 'utils/formatInforNumbers'
-// import CandleChart from './CandelChart'
 
 const StyledCard = styled(Card)`
   min-height: 300px;

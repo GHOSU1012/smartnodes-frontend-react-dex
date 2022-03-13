@@ -49,7 +49,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
   },
   drawerClose: {
     color: 'white',
-    fontFamily: 'Osiris !important',
+    fontFamily: 'Osiris',
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
@@ -126,7 +126,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
   },
   sidebarConnectContent: {
     fontSize: 14,
-    fontFamily: 'Osiris !important',
+    fontFamily: 'Osiris',
     lineHeight: '20px',
   },
   sidebarOpenImg: {
