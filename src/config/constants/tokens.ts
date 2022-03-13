@@ -7,7 +7,7 @@ export const CAKE: { [chainId: number]: Token } = {
     // process.env.REACT_APP_CAKETOKEN,
     18,
     'BLH',
-    'BlueHorizon Token',
+    'SmartNodes Token',
   ),
   [ChainId.TESTNET]: new Token(
     ChainId.TESTNET,
@@ -15,7 +15,7 @@ export const CAKE: { [chainId: number]: Token } = {
     // process.env.REACT_APP_CAKETOKEN,
     18,
     'BLH',
-    'BlueHorizon Token',
+    'SmartNodes Token',
   ),
 }
 export const BUSD: { [chainId: number]: Token } = {
@@ -77,7 +77,7 @@ const tokens = {
       97: process.env.REACT_APP_CAKETOKEN,
     },
     decimals: 18,
-    projectLink: 'https://bluehorizon.art/',
+    projectLink: 'https://smartnodes.art/',
   },
   chess: {
     symbol: 'CHESS',

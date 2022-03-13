@@ -110,7 +110,7 @@ export default function BottomLayer() {
       buttonText:'TRADE',
       buttonUrl:'/collectibles',
       bodyTitle:'NFT',
-      bodyText:'Earn BlueHorizon. Space Shuttle, Alien in NFTs',
+      bodyText:'Earn SmartNodes. Space Shuttle, Alien in NFTs',
       buttonTextColor: '#e2b716  '
     },
     {
@@ -119,7 +119,7 @@ export default function BottomLayer() {
       buttonText:'GENERATE',
       buttonUrl:'/farms',
       bodyTitle:'FARMING',
-      bodyText:'Earn up to 758.75% BlueHorizon in Farms',
+      bodyText:'Earn up to 758.75% SmartNodes in Farms',
       buttonTextColor: '#fa3195'
     }
   ];

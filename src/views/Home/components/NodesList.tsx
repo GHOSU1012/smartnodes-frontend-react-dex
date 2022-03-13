@@ -15,6 +15,7 @@ interface Column {
   label: string;
   minWidth?: number;
   align?: 'center';
+  font?: 'Osiris !important';
   format?: (value: number) => string;
 }
 

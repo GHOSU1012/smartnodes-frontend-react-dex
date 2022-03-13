@@ -2,7 +2,7 @@
   {
     "inputs": [
       {
-        "internalType": "contract IBlueHorizonToken",
+        "internalType": "contract ISmartNodesToken",
         "name": "_blh",
         "type": "address"
       },
@@ -160,7 +160,7 @@
     "name": "blh",
     "outputs": [
       {
-        "internalType": "contract IBlueHorizonToken",
+        "internalType": "contract ISmartNodesToken",
         "name": "",
         "type": "address"
       }
