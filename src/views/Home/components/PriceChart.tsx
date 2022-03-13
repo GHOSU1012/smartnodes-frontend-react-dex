@@ -28,7 +28,7 @@ const StyledCardBody = styled(CardBody)`
   flex-direction: row;
   justify-content: space-between
 `
-const ComingSoon = styled.div`
+const CommingSoon = styled.div`
 display: flex;
 justify-content: center;
 font-size: 28px;
@@ -82,9 +82,9 @@ const PriceChart = () => {
         </Flex> */}
       </StyledCardBody>
       <Box px="24px" height='250px'>
-        <ComingSoon>
+        <CommingSoon>
           Coming Soon
-        </ComingSoon>
+        </CommingSoon>
         {/* <CandleChart data={priceData} setValue={setHoverValue} setLabel={setHoverDate} /> */}
       </Box>
     </StyledCard>

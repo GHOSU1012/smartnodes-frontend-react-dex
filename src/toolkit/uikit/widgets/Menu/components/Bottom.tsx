@@ -49,7 +49,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
   },
   drawerClose: {
     color: 'white',
-    fontFamily: 'RobotoRegular',
+    fontFamily: 'Osiris',
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
@@ -85,7 +85,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
   userName: {
     fontSize: 14,
     marginRight: 10,
-    fontFamily: 'RobotoRegular !important',
+    fontFamily: 'Osiris !important',
     [theme.breakpoints.down('sm')]: {
       display: 'none',
     }
@@ -126,7 +126,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
   },
   sidebarConnectContent: {
     fontSize: 14,
-    fontFamily: 'RobotoRegular',
+    fontFamily: 'Osiris',
     lineHeight: '20px',
   },
   sidebarOpenImg: {

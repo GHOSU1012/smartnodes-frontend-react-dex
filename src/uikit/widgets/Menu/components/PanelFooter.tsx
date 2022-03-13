@@ -55,9 +55,6 @@ const PanelFooter: React.FC<Props> = ({
         <IconButton variant="text" onClick={() => pushNav(true)}>
           <img src="/images/discord.png" alt="discord icon" width='32px' />
         </IconButton>
-        <IconButton variant="text" onClick={() => pushNav(true)}>
-          <img src="/images/discord.png" alt="discord icon" width='32px' />
-        </IconButton>
       </Container>
     );
   }
@@ -65,10 +62,7 @@ const PanelFooter: React.FC<Props> = ({
   return (
     <Container>
       <IconButton variant="text" onClick={() => pushNav(true)}>
-        <img src="/images/discord.png" alt="discord icon" width='32px' />
-      </IconButton>
-      <IconButton variant="text" onClick={() => pushNav(true)}>
-        <img src="/images/discord.png" alt="discord icon" width='32px' />
+        <img src="/images/discord.png" alt="discord icon" width='32px'/>
       </IconButton>
     </Container>
   );

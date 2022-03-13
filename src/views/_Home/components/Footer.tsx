@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '14px',
     display: 'flex',
     alignItems: 'center',
-    fontFamily: 'RobotoRegular'
+    fontFamily: 'Osiris'
   },
   linkWrapper: {
     width: 320,

@@ -36,8 +36,6 @@ interface Props extends PanelProps, PushedProps { }
 const Container = styled.div`
   // flex: none;
   // display: flex;
-  // direction: column;
-  
   padding: 8px 4px 20px;
   background-color: ${({ theme }) => theme.nav.background};
   // border-top: solid 2px rgba(133, 133, 133, 0.1);
@@ -117,21 +115,13 @@ const PanelFooter: React.FC<Props> = ({
         <IconButton variant="text" onClick={() => pushNav(true)}>
           <img src="/images/discord.png" alt="discord icon" width='32px' />
         </IconButton>
-        <IconButton variant="text" onClick={() => pushNav(true)}>
-          <img src="/images/twitter.png" alt="twitter icon" width='32px' />
-        </IconButton>
       </Container>
     )
   }
 
   return (
     <Container>
-      <div style={{ marginBottom: '12px' }}>
-        <CakePrice cakePriceUsd='Discord' link='https://discord.gg/Smartnodes' />
-      </div>
-      <div style={{ marginBottom: '2px' }}>
-        <CakePrice cakePriceUsd='Twitter' link='https://twitter.com/smart_nodes' />
-      </div>
+      <CakePrice cakePriceUsd={cakePriceUsd} />
     </Container>
   )
 }

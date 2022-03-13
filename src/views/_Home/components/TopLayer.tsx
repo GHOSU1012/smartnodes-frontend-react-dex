@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     right: '45%',
     bottom: 0,
-    fontFamily: 'RobotoRegular',
+    fontFamily: 'Osiris',
     fontSize: '14px',
     color: '#173655',
     lineHeight: '20px',

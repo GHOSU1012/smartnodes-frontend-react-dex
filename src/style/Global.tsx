@@ -9,7 +9,7 @@ declare module 'styled-components' {
 
 const GlobalStyle = createGlobalStyle`
 * {
-  font-family: 'RobotoRegular';
+  font-family: 'Osiris';
 }
 iframe {
   display: none;

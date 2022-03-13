@@ -84,20 +84,20 @@ const Home: React.FC = () => {
       <Page>
         <Cards>
           <SMNprice title="$SMN" val1="$0" val2={0} img='images/status1.jpg' />
-          <TotalNodes title="Total Smart Nodes" val1="6500" val2={-5} img='images/status2.jpg' />
-          <TotalClaimedSMN title="Your Total Claimed $SMN" val1="3587" val2={null} img='images/status3.jpg' account={account} />
+          <TotalNodes title="Total Nodes" val1="6500" val2={-5} img='images/status2.jpg' />
+          <TotalClaimedSMN title="Total Claimed $SMN" val1="3587" val2={null} img='images/status3.jpg' account={account} />
           <AutoCompound title="Auto Compound" status={false} img1='images/status4.jpg' img2='images/status42.jpg' />
         </Cards>
         <BigCards>
           <IncomeCard img='images/income.jpg' />
-          <CustomCards>
-            <AvailReward account={account} />
+          <CustomCards>            
             <CreateNewNode myAccount={account} />
+            <AvailReward account={account} />
           </CustomCards>
         </BigCards>
-        <BigCards>
-          <NodesListCard account={account} />
+        <BigCards>          
           <PriceChart />
+          <NodesListCard account={account} />
         </BigCards>
       </Page>
     </>

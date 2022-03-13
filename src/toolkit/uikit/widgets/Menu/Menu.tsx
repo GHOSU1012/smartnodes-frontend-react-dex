@@ -17,11 +17,7 @@ import LangSelector from './components/LangSelector'
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  // background: #3a3a3c;
-  background: red;
-  background-image: url("/images/swap/bg.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100% !important;
+  background: #3a3a3c;
 `
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`

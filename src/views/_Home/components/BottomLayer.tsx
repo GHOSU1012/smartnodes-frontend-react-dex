@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 1.3,
     minHeight: '60px',
     fontSize: '18px',
-    fontFamily: 'RobotoRegular',
+    fontFamily: 'Osiris',
     margin: '5px',
   },
   buttonBody: {
