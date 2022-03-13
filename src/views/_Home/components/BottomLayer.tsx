@@ -57,17 +57,17 @@ const useStyles = makeStyles((theme) => ({
   },
   cardTitle: {
     fontSize: '20px',
-    fontFamily: 'Osiris',
+    fontFamily: 'Osiris !important',
   },
   cardBody: {
     lineHeight: 1.3,
     minHeight: '60px',
     fontSize: '18px',
-    fontFamily: 'Osiris',
+    fontFamily: 'Osiris !important',
     margin: '5px',
   },
   buttonBody: {
-    fontFamily: 'Osiris',
+    fontFamily: 'Osiris !important',
     position: 'absolute',
     top: '-3px',
     left: 0,

@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     right: '45%',
     bottom: 0,
-    fontFamily: 'Osiris',
+    fontFamily: 'Osiris !important',
     fontSize: '14px',
     color: '#173655',
     lineHeight: '20px',
@@ -117,7 +117,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 20,
   },
   middleBtn: {
-    fontFamily: 'Osiris',
+    fontFamily: 'Osiris !important',
     background: 'none',
     border: 'none',
     marginLeft: '-8px',
@@ -130,7 +130,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     color: '#000000',
-    fontFamily: 'Osiris',
+    fontFamily: 'Osiris !important',
   },
   slide: {
     display: 'flex',
