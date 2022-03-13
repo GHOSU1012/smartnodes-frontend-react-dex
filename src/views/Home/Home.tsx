@@ -90,14 +90,14 @@ const Home: React.FC = () => {
         </Cards>
         <BigCards>
           <IncomeCard img='images/income.jpg' />
-          <CustomCards>
-            <AvailReward account={account} />
+          <CustomCards>            
             <CreateNewNode myAccount={account} />
+            <AvailReward account={account} />
           </CustomCards>
         </BigCards>
-        <BigCards>
-          <NodesListCard account={account} />
+        <BigCards>          
           <PriceChart />
+          <NodesListCard account={account} />
         </BigCards>
       </Page>
     </>
