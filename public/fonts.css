@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'Osiris';
-  src: local('Osiris'), url(/fonts/Osiris.otf) format('opentype');
+  src: local('Osiris'), url(./fonts/Osiris.otf) format('opentype');
 }
 
 @font-face {
   font-family: 'Osiris';
-  src: local('Osiris'), url(/fonts/Osiris.otf) format('truetype');
+  src: local('Osiris'), url(./fonts/Osiris.otf) format('truetype');
 }
 
 @font-face {
   font-family: 'Osiris';
-  src: local('Osiris'), url(/fonts/Osiris.otf) format('truetype');
+  src: local('Osiris'), url(./fonts/Osiris.otf) format('truetype');
 }
