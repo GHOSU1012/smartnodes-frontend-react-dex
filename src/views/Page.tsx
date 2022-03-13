@@ -8,17 +8,14 @@ const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  padding: 16px;
-  padding-bottom: 0;
+  // width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
   min-height: calc(100vh - 64px);
-  // background: ${({ theme }) => theme.colors.gradients.bubblegum};
-  background-image: url("/images/swap/bg.png");
-  background-position: right;
+  // background-image: url("/images/swap/bg.png");
   background-repeat: no-repeat;
-  background-size: 500px 100% !important;
-  // background-size: cover;
-  // height: 100%;
+  background-size: 100% 100% !important;
+
   ${({ theme }) => theme.mediaQueries.xs} {
     background-size: auto;
   }

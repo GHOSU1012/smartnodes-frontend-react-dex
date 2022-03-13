@@ -18,6 +18,7 @@ import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from './config
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  background: red;
 `
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`
@@ -169,17 +170,9 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? '/'}
         />
-        {/* <>
-          <StyledMenuButton onClick={() => changeNetwork('0x1')}>ETHEREUM</StyledMenuButton>
-          <StyledHeading as="h1" scale="xl" mb="24px" color="text" marginBottom={0}>
-            SMART NODES
-          </StyledHeading>
-          <ActiveStyledMenuButton onClick={() => changeNetwork('0x38')}>BINANCE</ActiveStyledMenuButton>
-        </> */}
         {!!login && !!logout && (
           <Flex>
             <UserBlock account={account} login={login} logout={logout} />
-            {/* {profile && <Avatar profile={profile} />} */}
           </Flex>
         )}
       </StyledNav>
