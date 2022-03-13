@@ -10,7 +10,7 @@ const PageHearder = styled.div`
   border-bottom: 1px solid #243d5c;
   background-color: ${({theme})=>theme.colors.background};
   // ${({ theme }) => theme.mediaQueries.nav} {
-    background-image: url('/images/home/hearder-bg.png');
+    background-image: url('/images/home/bg.png');
     background-repeat: no-repeat;
     background-position: right;
   // }
