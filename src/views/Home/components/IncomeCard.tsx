@@ -67,7 +67,7 @@ const IncomeCard = ({ img }) => {
         <StyledImg src={img} alt='status_logo' />
         <StyledCardBody>
           <Heading scale="sm">
-            Your Monthly Passive Income
+            Your Monthly Earnings
           </Heading>
           <Label labelSize='33px'>
             $10,245
