@@ -106,50 +106,10 @@ const Exchange = () => {
   const [amount1, setAmount1] = useState('0');
   const [amount2, setAmount2] = useState('0');
 
-  const tokenType = (pos, tt) => {
-    // const temp = pos === 1 ?
-      // document.getElementById('select1') as HTMLSelectElement :
-      // document.getElementById('select2') as HTMLSelectElement;
-
-    // if (pos === 1)
-      setToekn1(tt);
-    // else
-      // setToekn2(tt);
-
-    // const index = tt === 'avax' ? 0 : 1;
-    // temp.options[index].selected = true;
-  }
-
   const tokenFunc1 = (e) => {
-    if (e.target.value === 'avax') {
-      tokenType(1, 'avax');
-      // tokenType(2, 'usdce');
-    }
-    else {
-      tokenType(1, 'usdce');
-      // tokenType(2, 'avax');
-    }
+    setToekn1(e.target.value);
   }
-  const tokenFunc2 = (e) => {
-    if (e.target.value === 'avax') {
-      tokenType(2, 'avax');
-      tokenType(1, 'usdce');
-    }
-    else {
-      tokenType(2, 'usdce');
-      tokenType(1, 'avax');
-    }
-  }
-  const exchangeToken = () => {
-    if (token1 === 'avax') {
-      tokenType(2, 'avax');
-      tokenType(1, 'usdce');
-    }
-    else {
-      tokenType(2, 'usdce');
-      tokenType(1, 'avax');
-    }
-  }
+
   const amountChange1 = (e) => {
     setAmount1(e.target.value);
   }
@@ -194,25 +154,15 @@ const Exchange = () => {
           {/* -----------------  Input Token Amount & Select Token Type _ Tag2 ---------------------- */}
           <InputStyle>
             <div className='d-flex flex-row justify-content-between align-items-center'>
-              {token2 === 'smn' ?
-                <div className='d-flex flex-row align-items-center' style={{ gap: '4px' }}>
-                  <img src='images/home/avax.png' width='25px' alt='avax' />
-                  <div style={{ color: 'white' }}>SMN</div>
-                </div> :
-                <div className='d-flex flex-row align-items-center' style={{ gap: '4px' }}>
-                  <img src='images/home/usdce.png' alt='avax' width='25px' />
-                  <div style={{ color: 'white' }}>USDC.e</div>
-                </div>
-              }
+              <div className='d-flex flex-row align-items-center' style={{ gap: '4px' }}>
+                <img src='images/Logo-02.png' width='28px' alt='avax' />
+                <div style={{ color: 'white' }}>SMN</div>
+              </div>
               <div style={{ color: 'white' }}>balance: 0</div>
             </div>
 
             <div className='d-flex flex-row align-items-center' style={{ gap: '4px', marginTop: '8px' }}>
               <StyledInput2 placeholder='amount' id='nameToBuyNode' onChange={amountChange2} />
-              {/* <SelectStyle2 id='select2'> */}
-                {/* <option value="smn">SMN</option> */}
-                {/* <option value="usdce" selected>USDC.e</option> */}
-              {/* </SelectStyle2> */}
             </div>
           </InputStyle>
 
