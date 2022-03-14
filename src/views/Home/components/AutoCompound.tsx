@@ -27,6 +27,16 @@ const StyledCardBody = styled(CardBody)`
   justify-content: space-between;
 `
 
+const ComingSoon = styled.div`
+display: flex;
+justify-content: center;
+font-size: 14px;
+color: #fff;
+// font-weight: bold;
+align-items: center;
+height: 100%;
+`
+
 const ToogleCard = ({ title, status, img1, img2 }) => {
   const [isOn, setIsOn] = useState(status)
 
@@ -37,9 +47,10 @@ const ToogleCard = ({ title, status, img1, img2 }) => {
           <Heading scale="sm" mb="8px">
             {title}
           </Heading>
-
           <ToggleButtonAC onClick={() => setIsOn(!isOn)} />
-
+          <ComingSoon>
+          Coming Soon
+        </ComingSoon>
         </StyledCardBody>
         <StyledImg src={isOn ? img2 : img1} alt='status_logo' />
       </RowBlockBetween>
