@@ -1,19 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import axios from 'axios'
-import { Card, CardBody, Heading } from 'uikit'
-import { ethers } from 'ethers';
+import { CardBody } from 'uikit'
 import { AppHeader, AppBody } from '../../components/App'
 import Page from '../Page'
-
-// import Web3 from 'web3';s
-
-
-import tempABI from '../../contracts/smartnodes.json';
-
-const contractABI = tempABI.abi;
-const contractAddress = '0xa5CD786fDA5802BeD0138E3e591eEB52712DD9Ee';
-
 
 const StyledInput = styled.input`
   color: ${({ theme }) => theme.colors.textSubtle};
@@ -184,6 +173,7 @@ const Exchange = () => {
         <AppHeader title='Exchange' subtitle='Exchange with AVAX and USDC.e' />
 
         <StyledCardBody>
+          {/* -----------------  Input Token Amount & Select Token Type _ Tag1 ---------------------- */}
           <InputStyle>
             <div className='d-flex flex-row justify-content-between align-items-center'>
               {token1 === 'avax' ?
@@ -207,7 +197,11 @@ const Exchange = () => {
               </SelectStyle>
             </div>
           </InputStyle>
+
+          {/* -----------------  Exchange Token1 and Token2 _ Button ---------------------- */}
           <StyledButton2 onClick={exchangeToken}>V</StyledButton2>
+
+          {/* -----------------  Input Token Amount & Select Token Type _ Tag2 ---------------------- */}
           <InputStyle>
             <div className='d-flex flex-row justify-content-between align-items-center'>
               {token2 === 'avax' ?

@@ -43,9 +43,8 @@ const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig 
         </Flex>
       </Flex>
       {!noConfig && (
-        <Flex>
+        <Flex style={{position:'absolute', right:'32px', top:'32px'}}>
           <Settings />
-          {/* <Transactions /> */}
         </Flex>
       )}
     </AppHeaderContainer>
