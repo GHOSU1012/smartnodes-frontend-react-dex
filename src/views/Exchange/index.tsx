@@ -18,6 +18,9 @@ const StyledInput = styled.input`
     outline: 0;
   }
 `
+const StyledInput2 = styled(StyledInput)`
+  border-radius: 10px;
+`
 
 const SelectStyle = styled.select`
   color: white;
@@ -28,7 +31,6 @@ const SelectStyle = styled.select`
   height: 33px;
   width: 100px;
 `
-
 
 const StyledCardBody = styled(CardBody)`
   height: 100%;
@@ -69,13 +71,12 @@ const StyledButton = styled.button`
     box-shadow: none;
   }
 `;
-const StyledButton2 = styled.button`
+const StyledButton2 = styled.div`
   align-items: center;
   border: 0;
   border-radius: 15px;
   padding: 12px;
   margin-top: 10px;
-  cursor: pointer;
   display: inline-flex;
   width: 30px;
   height: 30px;
@@ -85,17 +86,6 @@ const StyledButton2 = styled.button`
   justify-content: center;
   letter-spacing: 0.03em;
   color: #faa21a;
-  transition: background-color 0.2s, opacity 0.2s;
-
-  &:hover {
-    opacity: 0.65;
-  }
-
-  &:active {
-    opacity: 0.85;
-    transform: translateY(1px);
-    box-shadow: none;
-  }
 `;
 
 const InputStyle = styled.div`
@@ -112,32 +102,32 @@ const InputStyle = styled.div`
 
 const Exchange = () => {
   const [token1, setToekn1] = useState('avax');
-  const [token2, setToekn2] = useState('usdce');
+  const [token2, setToekn2] = useState('smn');
   const [amount1, setAmount1] = useState('0');
   const [amount2, setAmount2] = useState('0');
 
   const tokenType = (pos, tt) => {
-    const temp = pos === 1 ?
-      document.getElementById('select1') as HTMLSelectElement :
-      document.getElementById('select2') as HTMLSelectElement;
+    // const temp = pos === 1 ?
+      // document.getElementById('select1') as HTMLSelectElement :
+      // document.getElementById('select2') as HTMLSelectElement;
 
-    if (pos === 1)
+    // if (pos === 1)
       setToekn1(tt);
-    else
-      setToekn2(tt);
+    // else
+      // setToekn2(tt);
 
-    const index = tt === 'avax' ? 0 : 1;
-    temp.options[index].selected = true;
+    // const index = tt === 'avax' ? 0 : 1;
+    // temp.options[index].selected = true;
   }
 
   const tokenFunc1 = (e) => {
     if (e.target.value === 'avax') {
       tokenType(1, 'avax');
-      tokenType(2, 'usdce');
+      // tokenType(2, 'usdce');
     }
     else {
       tokenType(1, 'usdce');
-      tokenType(2, 'avax');
+      // tokenType(2, 'avax');
     }
   }
   const tokenFunc2 = (e) => {
@@ -190,7 +180,7 @@ const Exchange = () => {
             </div>
 
             <div className='d-flex flex-row align-items-center' style={{ gap: '4px', marginTop: '8px' }}>
-              <StyledInput placeholder='node name' id='nameToBuyNode' onChange={amountChange1} />
+              <StyledInput placeholder='amount' id='nameToBuyNode' onChange={amountChange1} />
               <SelectStyle onChange={tokenFunc1} id='select1'>
                 <option value="avax">AVAX</option>
                 <option value="usdce">USDC.e</option>
@@ -199,15 +189,15 @@ const Exchange = () => {
           </InputStyle>
 
           {/* -----------------  Exchange Token1 and Token2 _ Button ---------------------- */}
-          <StyledButton2 onClick={exchangeToken}>V</StyledButton2>
+          <StyledButton2>V</StyledButton2>
 
           {/* -----------------  Input Token Amount & Select Token Type _ Tag2 ---------------------- */}
           <InputStyle>
             <div className='d-flex flex-row justify-content-between align-items-center'>
-              {token2 === 'avax' ?
+              {token2 === 'smn' ?
                 <div className='d-flex flex-row align-items-center' style={{ gap: '4px' }}>
                   <img src='images/home/avax.png' width='25px' alt='avax' />
-                  <div style={{ color: 'white' }}>AVAX</div>
+                  <div style={{ color: 'white' }}>SMN</div>
                 </div> :
                 <div className='d-flex flex-row align-items-center' style={{ gap: '4px' }}>
                   <img src='images/home/usdce.png' alt='avax' width='25px' />
@@ -218,11 +208,11 @@ const Exchange = () => {
             </div>
 
             <div className='d-flex flex-row align-items-center' style={{ gap: '4px', marginTop: '8px' }}>
-              <StyledInput placeholder='node name' id='nameToBuyNode' onChange={amountChange2} />
-              <SelectStyle onChange={tokenFunc2} id='select2'>
-                <option value="avax">AVAX</option>
-                <option value="usdce" selected>USDC.e</option>
-              </SelectStyle>
+              <StyledInput2 placeholder='amount' id='nameToBuyNode' onChange={amountChange2} />
+              {/* <SelectStyle2 id='select2'> */}
+                {/* <option value="smn">SMN</option> */}
+                {/* <option value="usdce" selected>USDC.e</option> */}
+              {/* </SelectStyle2> */}
             </div>
           </InputStyle>
 
