@@ -153,7 +153,6 @@ const StyledButton2 = styled.button`
   }
 `;
 
-
 const BuyNode = () => {
   const [nodeName, setNodeName] = useState('');
   const [amount, setAmount] = useState('');
@@ -219,17 +218,13 @@ const BuyNode = () => {
                 </div>
               }
               <div style={{ color: 'white' }}>balance: 0</div>
-              {/* <StyledButton2 onClick={buyNode}>max</StyledButton2> */}
             </div>
 
-            {/* <div className='d-flex flex-row justify-content-between align-items-center mt-2' style={{ gap: '4px' }}> */}
-            {/* <StyledInput2 placeholder='amount' id='amountToBuyNode' onChange={inputHandleChange2} /> */}
             <SelectStyle onChange={tokenChange}>
               <option value="avax">AVAX
               </option>
               <option value="usdce">USDC.e</option>
             </SelectStyle>
-            {/* </div> */}
           </InputStyle>
 
           <StyledInput placeholder='node name' id='nameToBuyNode' onChange={inputHandleChange} />

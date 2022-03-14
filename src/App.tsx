@@ -6,9 +6,8 @@ import Menu from './components/Menu'
 import SuspenseWithChunkError from './components/SuspenseWithChunkError'
 import PageLoader from './components/Loader/PageLoader'
 import history from './routerHistory'
-import Swap from './views/Swap'
 import BuyNode from './views/BuyNode'
-// import NotFound from './views/NotFound'
+import Exchange from './views/Exchange'
 import ComingSoon from './views/ComingSoon'
 
 const Home = lazy(() => import('./views/Home'))
@@ -26,7 +25,7 @@ const App: React.FC = () => {
               <Home />
             </Route>
             <Route exact strict path="/buy" component={BuyNode} />
-            <Route exact strict path="/swap" component={ComingSoon} />
+            <Route exact strict path="/swap" component={Exchange} />
             <Route exact strict path="/treasury" component={ComingSoon} />
             <Route exact strict path="/whitepaper" component={ComingSoon} />
             <Route exact strict path="/tokenomics" component={ComingSoon} />
