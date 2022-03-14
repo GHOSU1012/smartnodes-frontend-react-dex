@@ -127,24 +127,48 @@ const Exchange = () => {
   const [amount1, setAmount1] = useState('0');
   const [amount2, setAmount2] = useState('0');
 
+  const tokenType = (pos, tt) => {
+    const temp = pos === 1 ?
+      document.getElementById('select1') as HTMLSelectElement :
+      document.getElementById('select2') as HTMLSelectElement;
+
+    if (pos === 1)
+      setToekn1(tt);
+    else
+      setToekn2(tt);
+
+    const index = tt === 'avax' ? 0 : 1;
+    temp.options[index].selected = true;
+  }
+
   const tokenFunc1 = (e) => {
     if (e.target.value === 'avax') {
-      setToekn1('avax');
-      setToekn2('usdce');
+      tokenType(1, 'avax');
+      tokenType(2, 'usdce');
     }
     else {
-      setToekn2('avax');
-      setToekn1('usdce');
+      tokenType(1, 'usdce');
+      tokenType(2, 'avax');
     }
   }
   const tokenFunc2 = (e) => {
     if (e.target.value === 'avax') {
-      setToekn2('avax');
-      setToekn1('usdce');
+      tokenType(2, 'avax');
+      tokenType(1, 'usdce');
     }
     else {
-      setToekn1('avax');
-      setToekn2('usdce');
+      tokenType(2, 'usdce');
+      tokenType(1, 'avax');
+    }
+  }
+  const exchangeToken = () => {
+    if (token1 === 'avax') {
+      tokenType(2, 'avax');
+      tokenType(1, 'usdce');
+    }
+    else {
+      tokenType(2, 'usdce');
+      tokenType(1, 'avax');
     }
   }
   const amountChange1 = (e) => {
@@ -183,7 +207,7 @@ const Exchange = () => {
               </SelectStyle>
             </div>
           </InputStyle>
-          <StyledButton2>V</StyledButton2>
+          <StyledButton2 onClick={exchangeToken}>V</StyledButton2>
           <InputStyle>
             <div className='d-flex flex-row justify-content-between align-items-center'>
               {token2 === 'avax' ?
@@ -203,7 +227,7 @@ const Exchange = () => {
               <StyledInput placeholder='node name' id='nameToBuyNode' onChange={amountChange2} />
               <SelectStyle onChange={tokenFunc2} id='select2'>
                 <option value="avax">AVAX</option>
-                <option value="usdce">USDC.e</option>
+                <option value="usdce" selected>USDC.e</option>
               </SelectStyle>
             </div>
           </InputStyle>
