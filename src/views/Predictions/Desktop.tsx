@@ -70,7 +70,7 @@ const StyledDesktop = styled.div`
 const PositionPane = styled.div`
   align-items: center;
   display: flex;
-  max-width: 100%;
+  //max-width:100%;
   overflow-y: auto;
   overflow-x: hidden;
 

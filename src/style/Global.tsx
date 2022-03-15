@@ -19,7 +19,7 @@ body {
 
   img {
     height: auto;
-    max-width: 100%;
+    //max-width:100%;
   }
 
   .osiris {

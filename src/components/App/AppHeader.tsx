@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Text, Flex, IconButton, ArrowBackIcon } from 'toolkit/uikit'
 import { Link } from 'react-router-dom'
 import Settings from './Settings'
-// import Transactions from './Transactions'
 import QuestionHelper from '../QuestionHelper'
 
 interface Props {

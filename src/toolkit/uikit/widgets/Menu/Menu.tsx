@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import throttle from 'lodash/throttle'
-import { Text } from 'toolkit/uikit'
+import { Text, Heading } from 'toolkit/uikit'
 import Overlay from '../../components/Overlay/Overlay'
 import Flex from '../../components/Box/Flex'
 import { useMatchBreakpoints } from '../../hooks'
@@ -55,7 +55,7 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
   transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate3d(0, 0, 0);
-  max-width: 100%;
+  //max-width:100%;
 
   ${({ theme }) => theme.mediaQueries.nav} {
     margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
@@ -68,6 +68,12 @@ const MobileOnlyOverlay = styled(Overlay)`
   height: 100%;
 
   ${({ theme }) => theme.mediaQueries.nav} {
+    display: none;
+  }
+`
+
+const StyledHeading = styled(Heading)`
+  @media (max-width: 768px) {
     display: none;
   }
 `
@@ -139,6 +145,13 @@ const Menu: React.FC<NavProps> = ({
           // isDark={isDark}
           href={homeLink?.href ?? '/'}
         />
+
+        
+        <StyledHeading as="h1" marginBottom={0}>
+          We Have Not Launched
+        </StyledHeading>
+
+
         {!!login && !!logout && (
           <Flex alignItems='center'>
             <UserBlock account={account} login={login} logout={logout} />

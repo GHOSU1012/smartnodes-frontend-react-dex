@@ -246,7 +246,6 @@ const NFT = () => {
             {[1, 2, 3, 4, 5, 6].map((data) => (
               <div className={classes.artist} key={data}
                 role="button" aria-hidden="true"
-                onClick={() => console.log('Artist ', data)}
               >
                 <img className={classes.artistAvatar} src='' alt="" />
                 <span>Artist {data}</span>

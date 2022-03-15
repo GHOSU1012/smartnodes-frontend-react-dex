@@ -65,12 +65,10 @@ const TotalNodes = ({ title, val1, val2, img }) => {
           const signer = provider.getSigner();
           const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
-          console.log(`TotalNodesCreated----------------------------------`);
           const val = await contract.totalNodesCreated();
           // const val = '10';
           // console.log(val);
           setTotalNodes(val.toString());
-          console.log(`TotalNodesCreated==: ${totalNodes}`);
         }
         else {
           console.log("Connection Error");

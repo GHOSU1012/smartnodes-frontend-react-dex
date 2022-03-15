@@ -29,7 +29,7 @@ const Pre = styled.pre`
   color: ${({ theme }) => theme.colors.text};
   margin-bottom: 16px;
   margin-top: 16px;
-  max-width: 100%;
+  //max-width:100%;
   overflow-x: auto;
 `
 

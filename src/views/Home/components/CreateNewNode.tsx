@@ -96,8 +96,8 @@ const CreateNewNode = (myAccount) => {
         const signer = provider.getSigner();
         const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
-        console.log(myAccount, nodeName);
-        const newNode = await contract.createNode(myAccount, nodeName, 1, true);
+        // console.log(myAccount, nodeName);
+        // const newNode = await contract.createNode(myAccount, nodeName, 1, true);
 
         // await contract.on("NodeCreated", (amount, account, blockTime) => {
         //   console.log("Node Successfully created", amount, account, blockTime);

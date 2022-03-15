@@ -59,7 +59,6 @@ const IncomeCard = ({ img }) => {
   const [nodeNum, setNodeNum] = useState(0);
   const [smnNum, setSmnNum] = useState(0);
   const [smnPrice, setSmnPrice] = useState(0);
-  console.log("asdfsadf");
 
   return (
     <StyledCard>

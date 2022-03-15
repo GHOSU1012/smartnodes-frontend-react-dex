@@ -42,6 +42,7 @@ const StyledCardBody = styled(CardBody)`
 `
 
 const StyledButton = styled.button`
+  order: 4;
   align-items: center;
   border: 0;
   border-radius: 12px;
@@ -57,8 +58,6 @@ const StyledButton = styled.button`
   letter-spacing: 0.03em;
   background-color: #3a3a3c;
   color: #faa21a;
-  // line-height: 1;
-  // outline: 0;
   transition: background-color 0.2s, opacity 0.2s;
 
   &:hover {
@@ -71,7 +70,8 @@ const StyledButton = styled.button`
     box-shadow: none;
   }
 `;
-const StyledButton2 = styled.div`
+const StyledButton2 = styled.button`
+  order:2;
   align-items: center;
   border: 0;
   border-radius: 15px;
@@ -86,6 +86,17 @@ const StyledButton2 = styled.div`
   justify-content: center;
   letter-spacing: 0.03em;
   color: #faa21a;
+  transition: background-color 0.2s, opacity 0.2s;
+
+  &:hover {
+    opacity: 0.65;
+  }
+
+  &:active {
+    opacity: 0.85;
+    transform: translateY(1px);
+    box-shadow: none;
+  }
 `;
 
 const InputStyle = styled.div`
@@ -105,6 +116,7 @@ const Exchange = () => {
   const [token2, setToekn2] = useState('smn');
   const [amount1, setAmount1] = useState('0');
   const [amount2, setAmount2] = useState('0');
+  const [order, setOrder] = useState(true);
 
   const tokenFunc1 = (e) => {
     setToekn1(e.target.value);
@@ -120,11 +132,11 @@ const Exchange = () => {
   return (
     <Page>
       <AppBody>
-        <AppHeader title='Exchange' subtitle='Exchange with AVAX and USDC.e' />
+        <AppHeader title='Swap' subtitle='Swap AVAX & USDC.e for $SMN' />
 
         <StyledCardBody>
           {/* -----------------  Input Token Amount & Select Token Type _ Tag1 ---------------------- */}
-          <InputStyle>
+          <InputStyle style={{ order: `${order ? 1 : 3}` }}>
             <div className='d-flex flex-row justify-content-between align-items-center'>
               {token1 === 'avax' ?
                 <div className='d-flex flex-row align-items-center' style={{ gap: '4px' }}>
@@ -149,24 +161,32 @@ const Exchange = () => {
           </InputStyle>
 
           {/* -----------------  Exchange Token1 and Token2 _ Button ---------------------- */}
-          <StyledButton2>V</StyledButton2>
+          <StyledButton2 onClick={() => setOrder(!order)}>
+            <img src='images/switch.png' width='18px' alt='tokenSwitch' />
+          </StyledButton2>
 
           {/* -----------------  Input Token Amount & Select Token Type _ Tag2 ---------------------- */}
-          <InputStyle>
+          <InputStyle style={{ order: `${order ? 3 : 1}` }}>
             <div className='d-flex flex-row justify-content-between align-items-center'>
               <div className='d-flex flex-row align-items-center' style={{ gap: '4px' }}>
-                <img src='images/Logo-02.png' width='28px' alt='avax' />
+                <img src='images/Logo-02.png' width='25px' alt='smn' />
                 <div style={{ color: 'white' }}>SMN</div>
               </div>
               <div style={{ color: 'white' }}>balance: 0</div>
             </div>
 
             <div className='d-flex flex-row align-items-center' style={{ gap: '4px', marginTop: '8px' }}>
-              <StyledInput2 placeholder='amount' id='nameToBuyNode' onChange={amountChange2} />
+              <StyledInput placeholder='amount' id='nameToBuyNode' onChange={amountChange2} />
+              <SelectStyle id='select1'>
+                <option value="smn">SMN</option>
+              </SelectStyle>
             </div>
           </InputStyle>
 
           <StyledButton >SWAP</StyledButton>
+
+          <div style={{ color: 'white', fontSize: '20px', marginTop: '40px', order: 5 }}>Phase 2</div>
+          <div style={{ color: 'white', fontSize: '20px', marginTop: '20px', order: 6 }}>Coming Soon</div>
         </StyledCardBody>
 
       </AppBody>

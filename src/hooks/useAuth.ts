@@ -36,7 +36,6 @@ const useAuth = () => {
           } else {
             window.localStorage.removeItem(connectorLocalStorageKey)
             if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
-              // console.log('Provider Error', 'No provider was found')
               alert("Install Metamask and create Wallet");
             } else if (
               error instanceof UserRejectedRequestErrorInjected ||
