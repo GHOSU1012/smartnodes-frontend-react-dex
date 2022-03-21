@@ -7,6 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
+import axios from 'axios'
 // import { withStyles } from "@mui/styles";
 // import styled from 'styled-components'
 
@@ -42,55 +43,24 @@ function createData(
 const TxList = (account) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  // const [nList, setnList] = useState([]);
+  const [rows, setRows] = useState([]);
 
-
-  const rows = [
-    { tx: '0x123123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x122123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1a3123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0xb23123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1ab123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x123123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x122123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1a3123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0xb23123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1ab123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x123123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x122123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1a3123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0xb23123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1ab123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x123123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x122123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1a3123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0xb23123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1ab123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x123123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x122123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1a3123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0xb23123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1ab123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x123123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x122123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1a3123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0xb23123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1ab123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x123123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x122123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1a3123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0xb23123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' },
-    { tx: '0x1ab123234...', fr: '0x234234234...', to: '0x235352234...', val: '120' }
-  ];
-
+  const getTransactionList = () => {
+    axios.get(`https://explorerapi.avax.network/v2/ctransactions`)
+      .then(res => {
+        setRows(res.data);
+      })
+  }
 
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
+    getTransactionList();
   };
 
   const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
+    getTransactionList();
   };
   // const classes = useStyles();
   return (
