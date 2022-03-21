@@ -9,6 +9,7 @@ import history from './routerHistory'
 import BuyNode from './views/BuyNode'
 import Exchange from './views/Exchange'
 import ComingSoon from './views/ComingSoon'
+import Treasury from './views/Treasury'
 
 const Home = lazy(() => import('./views/Home'))
 
@@ -26,9 +27,9 @@ const App: React.FC = () => {
             </Route>
             <Route exact strict path="/buy" component={BuyNode} />
             <Route exact strict path="/swap" component={Exchange} />
-            <Route exact strict path="/treasury" component={ComingSoon} />
-            <Route exact strict path="/whitepaper" component={ComingSoon} />
-            <Route exact strict path="/tokenomics" component={ComingSoon} />
+            <Route exact strict path="/treasury" component={Treasury} />
+            {/* <Route exact strict path="/whitepaper" component={ComingSoon} /> */}
+            {/* <Route exact strict path="/tokenomics" component={ComingSoon} /> */}
             <Route>
               <Redirect to="/" />
             </Route>
